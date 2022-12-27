@@ -1,0 +1,39 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.8; }
+}
+
+.mobile-nav-list {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    animation: fadeIn 1s;
+
+    &.open {
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+
+        & ul {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            margin-bottom: 30vh;
+
+            & li {
+                margin-bottom: 2rem;
+
+                & a {
+                    color: white;
+                }
+            }
+        }
+    }
+}

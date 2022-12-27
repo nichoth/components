@@ -1,11 +1,21 @@
+.burger {
+    z-index: 99;
+}
+
+.mobile-nav-list {
+    &.open {
+        z-index: 1;
+    }
+}
+
 .mobile-nav {
     display: none;
     text-align: right;
     padding-right: 1rem;
 
     &.open {
-        .burger {
-            .line {
+        & .burger {
+            & .line {
                 background-color: white;
             }
         }

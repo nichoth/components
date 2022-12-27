@@ -1,23 +1,33 @@
 // @ts-check
 import { render } from 'preact'
 import { html } from 'htm/preact'
-import { useState } from 'preact/hooks'
+// import { useState } from 'preact/hooks'
 import Hamburger from './hamburger.mjs'
+import MobileNav from './mobile-nav-menu.mjs'
+import { useSignal } from '@preact/signals'
 import './hamburger.css'
+import './mobile-nav-menu.css'
 import './index.css'
 
+const navList = [
+    { body: 'test', href: '/test' },
+    { body: 'fooo', href: '/fooo' }
+]
+
 const App = function App () {
-    const [ mobileNav, setMobileNav ] = useState(false)
+    const mobileNav = useSignal(false)
 
     function mobileNavHandler (ev) {
         ev.preventDefault()
-        setMobileNav(!mobileNav)
+        mobileNav.value = !mobileNav.value
     }
 
     return html`<div class="app">
-        <div class="mobile-nav${mobileNav ? ' open' : ''}">
+        <div class="mobile-nav${mobileNav.value ? ' open' : ''}">
             <${Hamburger} isOpen=${mobileNav} onClick=${mobileNavHandler} />
         </div>
+
+        <${MobileNav} isOpen=${mobileNav} navList=${navList} />
     </div>`
 }
 

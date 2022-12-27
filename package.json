@@ -17,6 +17,11 @@
       "./dist/*"
     ]
   },
+  "dependencies": {
+    "@preact/signals": "^1.1.2",
+    "htm": "^3.1.1",
+    "preact": "^10.11.3"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
@@ -35,10 +40,5 @@
     "ignore": [
       "public/*"
     ]
-  },
-  "dependencies": {
-    "@preact/signals": "^1.1.2",
-    "htm": "^3.1.1",
-    "preact": "^10.11.3"
   }
 }

@@ -1,7 +1,7 @@
 import { html } from 'htm/preact'
 
 export function Hamburger ({ onClick, isOpen }) {
-    return html`<div class="hamburger${isOpen ? ' open' : ''}">
+    return html`<div class="hamburger${isOpen.value ? ' open' : ''}">
         <input type="checkbox" id="checkbox" checked=${isOpen} />
         <label class="burger" for="checkbox" onclick=${onClick}>
             <button onclick=${onClick}>

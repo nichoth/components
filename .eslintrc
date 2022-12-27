@@ -12,6 +12,7 @@
       }
     ],
     "array-bracket-spacing": ["error", "always", { "singleValue": false }],
-    "indent": [ "error", 4 ]
+    "indent": [ "error", 4, { "ignoredNodes": ["TemplateLiteral *"] } ],
+    "operator-linebreak": ["error", "after"]
   }
 }
