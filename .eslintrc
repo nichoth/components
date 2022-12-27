@@ -11,6 +11,7 @@
         "maxEOF": 1
       }
     ],
+    "array-bracket-spacing": ["error", "always", { "singleValue": false }],
     "indent": [ "error", 4 ]
   }
 }

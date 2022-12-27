@@ -2,10 +2,8 @@
   "scripts": {
     "start": "vite",
     "lint": "standardx -v",
-    "build": "npm run build-js && npm run build-mjs",
+    "build": "mkdir -p dist && rm -rf dist/* && node ./build.mjs",
     "serve": "vite preview",
-    "build-js": "esbuild src/index.mjs --bundle --format=cjs --keep-names --outfile=./dist/index.cjs",
-    "build-mjs": "esbuild src/index.mjs --bundle --format=esm --keep-names --outfile=./dist/index.mjs",
     "preversion": "check-deps . 0 && npm run lint",
     "postversion": "git push && git push --tags && npm publish",
     "prepublishOnly": "npm run build",

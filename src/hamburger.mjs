@@ -15,3 +15,5 @@ export function Hamburger ({ onClick, isOpen }) {
         </label>
     </div>`
 }
+
+export default Hamburger
