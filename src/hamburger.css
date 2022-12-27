@@ -2,11 +2,11 @@
     display: inline-block;
 
     /* --------------- The important stuff --------------------------- */
-    .line {
+    & .line {
         transition: transform 0.2s ease-in-out;
     }
 
-    .container {
+    & .container {
         transition: transform 0.2s ease-in-out 0.1s;
 
         &.top {
@@ -29,10 +29,10 @@
             }
         }
 
-        .container {
+        & .container {
             transition-delay: 0s;
 
-            .line {
+            & .line {
                 &.bottom {
                     transform: rotateZ(45deg);
                 }
@@ -52,37 +52,37 @@
     
     
     /* ----------------- The boilerplate stuff --------------------- */
-    button {
+    & button {
         all: unset;
         cursor: pointer;
         display: block;
     }
     
-    button * {
+    & button * {
         pointer-events: none;
     }
     
-    .burger {
+    & .burger {
         height: 31px;
         width: 31px;
         display: block;
         position: relative;
     }
     
-    .container {
+    & .container {
         position: absolute;
         left: 7px;
         top: 15px;
     }
     
-    .line {
+    & .line {
         height: 1px;
         border-radius: 3px;
         background: black;
         width: 17px;
     }
     
-    input {
+    & input {
         display: none;
     }
 }

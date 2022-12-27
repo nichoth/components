@@ -1,0 +1,19 @@
+.mobile-nav {
+    display: none;
+    text-align: right;
+    padding-right: 1rem;
+
+    &.open {
+        .burger {
+            .line {
+                background-color: white;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile-nav {
+        display: block;
+    }
+}
