@@ -2,7 +2,7 @@
   "scripts": {
     "start": "vite",
     "lint": "standardx -v",
-    "build": "vite build",
+    "build": "npm run build-js && npm run build-mjs",
     "serve": "vite preview",
     "build-js": "esbuild src/index.mjs --bundle --format=cjs --keep-names --outfile=./dist/index.cjs",
     "build-mjs": "esbuild src/index.mjs --bundle --format=esm --keep-names --outfile=./dist/index.mjs",
@@ -12,10 +12,12 @@
     "test": "node ./test/test.js | tap-arc"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+    "./src/*": [
+      "./src/*"
+    ],
+    "./*": [
+      "./dist/*"
+    ]
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
@@ -24,6 +26,7 @@
     "@preact/preset-vite": "^2.5.0",
     "esbuild": "^0.15.11",
     "git-hooks-plus": "^1.0.1",
+    "glob": "^8.0.3",
     "postcss-nesting": "^10.2.0",
     "standardx": "^7.0.0",
     "tap-arc": "^0.3.5",
