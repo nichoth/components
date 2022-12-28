@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
-    animation: fadeIn 1s;
+    animation: fadeIn 0.2s;
 
     &.open {
         opacity: 0.8;
