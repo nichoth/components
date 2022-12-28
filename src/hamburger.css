@@ -1,3 +1,23 @@
+.hamburger-wrapper {
+    text-align: right;
+    padding-right: 1rem;
+    display: none;
+
+    &.open {
+        & .burger {
+            & .line {
+                background-color: white;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .hamburger-wrapper {
+        display: block;
+    }
+}
+
 .hamburger {
     display: inline-block;
 

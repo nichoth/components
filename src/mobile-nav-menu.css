@@ -19,6 +19,12 @@
         justify-content: center;
         position: fixed;
 
+        & .burger {
+            & .line {
+                background-color: white;
+            }
+        }
+
         & ul {
             padding: 0;
             display: flex;

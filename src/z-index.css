@@ -1,0 +1,9 @@
+.burger {
+    z-index: 99;
+}
+
+.mobile-nav-list {
+    &.open {
+        z-index: 1;
+    }
+}

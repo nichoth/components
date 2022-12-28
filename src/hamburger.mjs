@@ -1,5 +1,13 @@
 import { html } from 'htm/preact'
 
+export function HamburgerWrapper ({ onClick, isOpen }) {
+    return html`<div class="hamburger-wrapper${isOpen.value ? ' open' : ''}">
+        <${Hamburger} isOpen=${isOpen} onClick=${onClick} />
+    </div>`
+}
+
+export default HamburgerWrapper
+
 export function Hamburger ({ onClick, isOpen }) {
     return html`<div class="hamburger${isOpen.value ? ' open' : ''}">
         <input type="checkbox" id="checkbox" checked=${isOpen} />
@@ -15,5 +23,3 @@ export function Hamburger ({ onClick, isOpen }) {
         </label>
     </div>`
 }
-
-export default Hamburger
