@@ -15,17 +15,10 @@ glob('src/*.mjs', async (err, files) => {
         const target = path.join(__dirname, 'dist')
 
         return Promise.all([
-            esbuild.build({
-                entryPoints: [file],
-                bundle: false,
-                keepNames: true,
-                minify: false,
-                define: { global: 'window' },
-                sourcemap: 'inline',
-                format: 'esm',
-                outfile: path.join(target, baseFile + '.mjs'),
-                platform: 'browser'
-            }),
+            fs.promises.copyFile(
+                file,
+                path.join(target, baseFile + '.mjs')
+            ),
 
             esbuild.build({
                 entryPoints: [file],

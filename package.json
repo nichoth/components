@@ -17,8 +17,10 @@
     "test": "node ./test/test.js | tap-arc"
   },
   "exports": {
-    "./src/*": "./src/*",
-    "./*": "./dist/*"
+    "./*": {
+      "import": "./dist/*",
+      "require": "./dist/*"
+    }
   },
   "dependencies": {
     "@preact/signals": "^1.1.2",

@@ -1,16 +1,57 @@
-# template js
-A template for *dependency* JS modules -- modules intended to be a dependency of application code.
+# components
+A collection of UI components made with [preact](https://www.npmjs.com/package/preact).
+
+
+## install
+```
+npm i -S @nichoth/components
+```
 
 ## use
-1. Use the *template* button in github. Or clone this then `rm -rf .git && git init`. Then `npm i && npm init`.
+I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are all [preact](https://www.npmjs.com/package/preact) components; you will need to install `preact`.
 
-2. Edit the source code in `src/index.mjs`.
+### ESM
+```js
+import Hamburger from '@nichoth/components/hamburger.mjs'
+import '@nichoth/hamburger.css'
+```
 
-## featuring
-* compile the source to both ESM and CJS format, and put compiled files in `dist`.
-* ignore `dist` in git, but don't ignore it in npm. That way we don't commit any compiled code to git, but it is available to consumers.
-* use npm's `prepublishOnly` hook to compile the code before publishing to npm.
-* use `exports` field in `package.json` to make sure the right format is used by consumers.
-* `preversion` npm hook -- use `@nichoth/check-max-deps` to validate the number of dependencies, and lint via `standardx`.
-* eslint via [standardx](https://www.npmjs.com/package/standardx) -- `npm run lint`
-* use a githook via [git-hooks-plus](https://www.npmjs.com/package/git-hooks-plus) to lint the code before pushing
+### CJS
+```js
+const Hamburger = require('@nichoth/components/hamburger.cjs'.default
+```
+
+
+## example
+```js
+import { render } from 'preact'
+import { html } from 'htm/preact'
+import HamburgerWrapper from '@nichoth/components/hamburger.mjs'
+import MobileNav from '@nichoth/components/mobile-nav-menu.mjs'
+import { useSignal } from '@preact/signals'
+import '@nichoth/components/hamburger.css'
+import '@nichoth/components/mobile-nav-menu.css'
+import '@nichoth/components/z-index.css'
+
+const navList = [
+    { body: 'test', href: '/test' },
+    { body: 'fooo', href: '/fooo' }
+]
+
+const App = function App () {
+    const isOpen = useSignal(false)
+
+    function mobileNavHandler (ev) {
+        ev.preventDefault()
+        isOpen.value = !isOpen.value
+    }
+
+    return html`<div class="app">
+        <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler} />
+        <${MobileNav} isOpen=${isOpen} navList=${navList} />
+    </div>`
+}
+
+const el = document.getElementById('root')
+if (el) render(html`<${App} />`, el)
+```
