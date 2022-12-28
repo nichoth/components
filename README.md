@@ -18,7 +18,7 @@ import '@nichoth/hamburger.css'
 
 ### CJS
 ```js
-const Hamburger = require('@nichoth/components/hamburger.cjs'.default
+const Hamburger = require('@nichoth/components/hamburger.cjs').default
 ```
 
 
