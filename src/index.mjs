@@ -22,7 +22,9 @@ const App = function App () {
     }
 
     return html`<div class="app">
-        <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler} />
+        <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler}>
+            <p>testing</p>
+        </${HamburgerWrapper}>
         <${MobileNav} isOpen=${isOpen} navList=${navList} />
     </div>`
 }

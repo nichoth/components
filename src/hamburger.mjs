@@ -1,7 +1,8 @@
 import { html } from 'htm/preact'
 
-export function HamburgerWrapper ({ onClick, isOpen }) {
+export function HamburgerWrapper ({ children, onClick, isOpen }) {
     return html`<div class="hamburger-wrapper${isOpen.value ? ' open' : ''}">
+        ${children}
         <${Hamburger} isOpen=${isOpen} onClick=${onClick} />
     </div>`
 }
