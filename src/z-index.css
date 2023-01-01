@@ -2,6 +2,12 @@
     z-index: 99;
 }
 
+.hamburger-wrapper {
+    &.open {
+        z-index: 99;
+    }
+}
+
 .mobile-nav-list {
     &.open {
         z-index: 1;
