@@ -7,8 +7,10 @@ A collection of UI components made with [preact](https://www.npmjs.com/package/p
 npm i -S @nichoth/components
 ```
 
+
 ## use
 I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are all [preact](https://www.npmjs.com/package/preact) components; you will need to install `preact`.
+
 
 ### ESM
 ```js
