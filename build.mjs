@@ -6,8 +6,9 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+// js
 glob('src/*.mjs', async (err, files) => {
-    if (err) return console.log('errr', err)
+    if (err) throw err
     if (!files || !files.length) return
 
     await Promise.all(files.map(file => {
@@ -30,12 +31,20 @@ glob('src/*.mjs', async (err, files) => {
                 format: 'cjs',
                 outfile: path.join(target, baseFile + '.cjs'),
                 platform: 'browser'
-            }),
-
-            fs.promises.copyFile(
-                file.replace('.mjs', '.css'),
-                path.join(target, baseFile + '.css')
-            )
+            })
         ])
+    }))
+})
+
+// css
+glob('src/*.css', async (err, files) => {
+    if (err) throw err
+    if (!files || !files.length) return
+
+    await Promise.all(files.map(file => {
+        return fs.promises.copyFile(
+            file,
+            path.join(__dirname, 'dist', path.basename(file))
+        )
     }))
 })
