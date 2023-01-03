@@ -7,8 +7,6 @@ export function MobileNav ({ navList, activeHref, isOpen }) {
         return link === activeHref ? 'active' : ''
     }
 
-    console.log('isOpen', isOpen.value)
-
     function navClick () {
         isOpen.value = false
     }
