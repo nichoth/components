@@ -1,6 +1,6 @@
 {
   "name": "@nichoth/components",
-  "description": "A template for *dependency* JS modules -- modules intended to be a dependency of application code.",
+  "description": "A collection of UI components",
   "version": "0.0.4",
   "main": "src/index.mjs",
   "directories": {
