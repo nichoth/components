@@ -8,11 +8,6 @@ import './hamburger.css'
 import './mobile-nav-menu.css'
 import './z-index.css'
 
-const navList = [
-    { body: 'test', href: '/test' },
-    { body: 'fooo', href: '/fooo' }
-]
-
 const App = function App () {
     const isOpen = useSignal(false)
 
@@ -23,7 +18,7 @@ const App = function App () {
 
     return html`<div class="app">
         <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler} />
-        <${MobileNav} isOpen=${isOpen} navList=${navList}>
+        <${MobileNav} isOpen=${isOpen}>
             <a href="/baloney">baloney</a>
             <a href="/test">testing</a>
         <//>
