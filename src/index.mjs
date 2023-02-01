@@ -1,9 +1,11 @@
 // @ts-check
 import { render } from 'preact'
 import { html } from 'htm/preact'
+import { useSignal } from '@preact/signals'
 import HamburgerWrapper from './hamburger.mjs'
 import MobileNav from './mobile-nav-menu.mjs'
-import { useSignal } from '@preact/signals'
+import { CopyBtn, CopyIconBtn } from './copy-btn.ts'
+import './copy-btn.css'
 import './hamburger.css'
 import './mobile-nav-menu.css'
 import './z-index.css'
@@ -22,6 +24,10 @@ const App = function App () {
             <a href="/baloney">baloney</a>
             <a href="/test">testing</a>
         <//>
+
+        <${CopyBtn} payload=${'hurray'}>copy something<//>
+
+        <p>Copy this <${CopyIconBtn} payload=${'Copy this'}><//></p>
     </div>`
 }
 

@@ -11,16 +11,19 @@ glob('src/*.mjs', async (err, files) => {
     if (err) throw err
     if (!files || !files.length) return
 
+    // build .mjs files to cjs
     await Promise.all(files.map(file => {
         const baseFile = path.basename(file, '.mjs')
         const target = path.join(__dirname, 'dist')
 
         return Promise.all([
+            // copy .mjs to dist
             fs.promises.copyFile(
                 file,
-                path.join(target, baseFile + '.mjs')
+                path.join(target, `${baseFile}.mjs`)
             ),
 
+            // build cjs format
             esbuild.build({
                 entryPoints: [file],
                 bundle: false,
@@ -29,10 +32,23 @@ glob('src/*.mjs', async (err, files) => {
                 define: { global: 'window' },
                 sourcemap: 'inline',
                 format: 'cjs',
-                outfile: path.join(target, baseFile + '.cjs'),
+                outfile: path.join(target, `${baseFile}.cjs`),
                 platform: 'browser'
             })
         ])
+    }))
+})
+
+glob('src/*.ts', async (err, files) => {
+    if (err) throw err
+    if (!files || !files.length) return
+
+    await Promise.all(files.map(file => {
+        const baseFile = path.basename(file)
+        const target = path.join(__dirname, 'dist', baseFile)
+
+        // copy .ts to dist
+        return fs.promises.copyFile(file, target)
     }))
 })
 
