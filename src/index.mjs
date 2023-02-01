@@ -4,7 +4,8 @@ import { html } from 'htm/preact'
 import { useSignal } from '@preact/signals'
 import HamburgerWrapper from './hamburger.mjs'
 import MobileNav from './mobile-nav-menu.mjs'
-import { CopyBtn } from './copy-btn.js'
+import { CopyBtn, CopyIconBtn } from './copy-btn.ts'
+import './copy-btn.css'
 import './hamburger.css'
 import './mobile-nav-menu.css'
 import './z-index.css'
@@ -25,6 +26,8 @@ const App = function App () {
         <//>
 
         <${CopyBtn} payload=${'hurray'}>copy something<//>
+
+        <p>Copy this <${CopyIconBtn} payload=${'Copy this'}><//></p>
     </div>`
 }
 
