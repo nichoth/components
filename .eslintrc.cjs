@@ -10,13 +10,9 @@ module.exports = {
     root: true,
     rules: {
         'prefer-template': ['off'],
-        'no-multiple-empty-lines': [
-            'error', {
-                max: 1,
-                maxEOF: 1
-            }
-        ],
+        'no-multiple-empty-lines': [ 'error', { max: 1, maxEOF: 1 } ],
         'array-bracket-spacing': [ 'error', 'always', { singleValue: false } ],
+        "@typescript-eslint/ban-ts-comment": "off",
         indent: [ 'error', 4, { ignoredNodes: ['TemplateLiteral *'] } ],
         'operator-linebreak': [ 'error', 'after' ]
     }
