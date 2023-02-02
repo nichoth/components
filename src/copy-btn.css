@@ -5,8 +5,13 @@
     border: none;
 
     &.has-copied {
+        &:hover {
+            & svg {
+                fill: cornflowerblue;
+            }
+        }
+
         & svg {
-            /* fill: cornflowerblue; */
             fill: deepskyblue;
         }
     }
