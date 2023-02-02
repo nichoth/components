@@ -23,17 +23,24 @@ import '@nichoth/hamburger.css'
 const Hamburger = require('@nichoth/components/hamburger.cjs').default
 ```
 
-
 ## example
 ```js
+// @ts-check
 import { render } from 'preact'
 import { html } from 'htm/preact'
+import { useSignal } from '@preact/signals'
 import HamburgerWrapper from '@nichoth/components/hamburger.mjs'
 import MobileNav from '@nichoth/components/mobile-nav-menu.mjs'
-import { useSignal } from '@preact/signals'
+// some typescript is in `ts` folder
+// import these if you are in a typescript project
+import { CopyBtn, CopyIconBtn } from '@nichoth/components/ts/copy-btn.ts'
+import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
 import '@nichoth/components/z-index.css'
+
+// use CJS like this, with `.cjs` extension
+// const { CopyBtn } = require('@nichoth/components/copy-btn.cjs)
 
 const App = function App () {
     const isOpen = useSignal(false)
@@ -49,9 +56,14 @@ const App = function App () {
             <a href="/baloney">baloney</a>
             <a href="/test">testing</a>
         <//>
+
+        <${CopyBtn} payload=${'hurray'}>copy something<//>
+
+        <p>Copy this <${CopyIconBtn} payload=${'Copy this'}><//></p>
     </div>`
 }
 
 const el = document.getElementById('root')
 if (el) render(html`<${App} />`, el)
+
 ```
