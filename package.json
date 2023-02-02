@@ -11,7 +11,7 @@
     "lint": "standardx -v",
     "build": "mkdir -p dist && rm -rf dist/* && node ./build.mjs",
     "serve": "vite preview",
-    "preversion": "check-deps . 4 && npm run lint",
+    "preversion": "check-deps . 5 && npm run lint",
     "postversion": "git push && git push --tags && npm publish",
     "prepublishOnly": "npm run build",
     "test": "node ./test/test.js | tap-arc"
