@@ -98,7 +98,7 @@
     & .line {
         height: 1px;
         border-radius: 3px;
-        background: black;
+        background: var(--hamburger-color, black);
         width: 17px;
     }
     
