@@ -65,5 +65,14 @@ const App = function App () {
 
 const el = document.getElementById('root')
 if (el) render(html`<${App} />`, el)
+```
 
+### css
+We look for a css variable `--hamburger-color`, or by default use a black color.
+
+```css
+/* in your css file */
+:root {
+    --hamburger-color: #FAFAFA;
+}
 ```
