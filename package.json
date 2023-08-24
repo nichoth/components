@@ -1,5 +1,6 @@
 {
   "name": "@nichoth/components",
+  "type": "module",
   "description": "A collection of UI components",
   "version": "0.2.0",
   "main": "src/index.mjs",
@@ -30,6 +31,7 @@
     "@preact/signals": "^1.1.2",
     "clipboard-copy": "^4.0.1",
     "htm": "^3.1.1",
+    "just-kebab-case": "^4.2.0",
     "preact": "^10.11.3"
   },
   "devDependencies": {

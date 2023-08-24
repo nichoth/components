@@ -31,9 +31,7 @@ import { html } from 'htm/preact'
 import { useSignal } from '@preact/signals'
 import HamburgerWrapper from '@nichoth/components/hamburger.mjs'
 import MobileNav from '@nichoth/components/mobile-nav-menu.mjs'
-// some typescript is in `ts` folder
-// import these if you are in a typescript project
-import { CopyBtn, CopyIconBtn } from '@nichoth/components/ts/copy-btn.ts'
+import { CopyBtn, CopyIconBtn } from '@nichoth/components/copy-btn.mjs'
 import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
