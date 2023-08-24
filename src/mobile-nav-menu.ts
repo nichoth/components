@@ -1,8 +1,13 @@
-// @ts-check
+import { FunctionComponent, ComponentChildren } from 'preact'
+import { Signal } from '@preact/signals'
 import { html } from 'htm/preact'
 
-// `isOpen` is @preact/signal
-export function MobileNav (props) {
+interface Props {
+    isOpen:Signal<boolean>,
+    children:ComponentChildren[]
+}
+
+export const MobileNav:FunctionComponent<Props> = function (props) {
     const { isOpen, children } = props
 
     function navClick () {
@@ -11,7 +16,7 @@ export function MobileNav (props) {
 
     return html`<div class="mobile-nav-list${isOpen.value ? ' open' : ' closed'}">
         <ul>
-            ${children.map(el => {
+            ${children && children.map(el => {
                 return html`<li onclick=${navClick}>
                     ${el}
                 </li>`

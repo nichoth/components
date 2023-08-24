@@ -2,10 +2,9 @@
 import { render } from 'preact'
 import { html } from 'htm/preact'
 import { useSignal } from '@preact/signals'
-import HamburgerWrapper from './hamburger.mjs'
+import HamburgerWrapper from './hamburger.js'
 import MobileNav from './mobile-nav-menu.mjs'
-// @ts-ignore
-import { CopyBtn, CopyIconBtn } from './copy-btn.ts'
+import { CopyBtn, CopyIconBtn } from './copy-btn.js'
 import './copy-btn.css'
 import './hamburger.css'
 import './mobile-nav-menu.css'
