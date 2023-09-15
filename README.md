@@ -14,7 +14,7 @@ I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, be
 
 ### ESM
 ```js
-import Hamburger from '@nichoth/components/hamburger.mjs'
+import Hamburger from '@nichoth/components/hamburger.js'
 import '@nichoth/hamburger.css'
 ```
 
@@ -29,9 +29,9 @@ const Hamburger = require('@nichoth/components/hamburger.cjs').default
 import { render } from 'preact'
 import { html } from 'htm/preact'
 import { useSignal } from '@preact/signals'
-import HamburgerWrapper from '@nichoth/components/hamburger.mjs'
-import MobileNav from '@nichoth/components/mobile-nav-menu.mjs'
-import { CopyBtn, CopyIconBtn } from '@nichoth/components/copy-btn.mjs'
+import HamburgerWrapper from '@nichoth/components/hamburger'
+import MobileNav from '@nichoth/components/mobile-nav-menu'
+import { CopyBtn, CopyIconBtn } from '@nichoth/components/copy-btn'
 import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
