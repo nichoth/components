@@ -1,0 +1,13 @@
+.edit-pencil {
+    position: relative;
+    top: 6px;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: blue;
+
+    &:hover {
+        color: cyan;
+        cursor: pointer;
+    }
+}

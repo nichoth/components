@@ -11,7 +11,8 @@ module.exports = {
     rules: {
         'prefer-template': ['off'],
         'no-multiple-empty-lines': [ 'error', { max: 1, maxEOF: 1 } ],
-        'array-bracket-spacing': [ 'error', 'always', { singleValue: false } ],
+        'array-bracket-spacing': ['off'],
+        '@typescript-eslint/no-non-null-assertion': 'off',
         "@typescript-eslint/ban-ts-comment": "off",
         indent: [ 'error', 4, { ignoredNodes: ['TemplateLiteral *'] } ],
         'operator-linebreak': [ 'error', 'after' ]
