@@ -11,7 +11,7 @@
     "start": "vite",
     "lint": "standardx -v",
     "build-cjs": "esbuild src/*.ts --format=cjs --tsconfig=tsconfig.build.json --keep-names --outdir=./dist --out-extension:.js=.cjs",
-    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && tsc --project tsconfig.build.json",
+    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && tsc --project tsconfig.build.json && cp ./src/*.css dist",
     "serve": "vite preview",
     "preversion": "check-deps . 6 && npm run lint",
     "postversion": "git push && git push --tags && npm publish",
