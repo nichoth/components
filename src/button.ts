@@ -4,7 +4,7 @@ import { FunctionComponent } from 'preact'
 interface Props extends HTMLElement {
     isSpinning:boolean;
     class?:string;
-    onClick:EventListener
+    onClick?:EventListener
 }
 
 const Button:FunctionComponent<Props> = function Button (props:Props) {
