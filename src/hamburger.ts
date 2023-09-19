@@ -1,6 +1,7 @@
 import { html } from 'htm/preact'
 
-export function HamburgerWrapper ({ children, onClick, isOpen }) {
+export function HamburgerWrapper (props:{ children?, onClick, isOpen }) {
+    const { children, onClick, isOpen } = props
     return html`<div class="hamburger-wrapper${isOpen.value ? ' open' : ''}">
         ${children}
         <${Hamburger} isOpen=${isOpen} onClick=${onClick} />
