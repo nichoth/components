@@ -4,7 +4,7 @@ import { html } from 'htm/preact'
 
 interface Props {
     isOpen:Signal<boolean>,
-    children:ComponentChildren[]
+    children:ComponentChildren
 }
 
 export const MobileNav:FunctionComponent<Props> = function (props) {
@@ -16,7 +16,7 @@ export const MobileNav:FunctionComponent<Props> = function (props) {
 
     return html`<div class="mobile-nav-list${isOpen.value ? ' open' : ' closed'}">
         <ul>
-            ${children && children.map(el => {
+            ${Array.isArray(children) && children.map(el => {
                 return html`<li onclick=${navClick}>
                     ${el}
                 </li>`
