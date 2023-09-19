@@ -1,10 +1,9 @@
-import { FunctionComponent, ComponentChildren } from 'preact'
+import { FunctionComponent } from 'preact'
 import { Signal } from '@preact/signals'
 import { html } from 'htm/preact'
 
 interface Props {
-    isOpen:Signal<boolean>,
-    children:ComponentChildren
+    isOpen:Signal<boolean>
 }
 
 export const MobileNav:FunctionComponent<Props> = function (props) {
