@@ -14,6 +14,7 @@ module.exports = {
         'array-bracket-spacing': ['off'],
         '@typescript-eslint/no-non-null-assertion': 'off',
         "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": ["off"],
         indent: [ 'error', 4, { ignoredNodes: ['TemplateLiteral *'] } ],
         'operator-linebreak': [ 'error', 'after' ]
     }
