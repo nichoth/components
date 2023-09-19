@@ -1,4 +1,4 @@
-export default function simpleSvgPlaceholder({
+export function simpleSvgPlaceholder({
     width = 300,
     height = 150,
     text = `${width}×${height}`,
