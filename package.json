@@ -20,8 +20,8 @@
   },
   "exports": {
     "./*": {
-      "import": "./dist/*",
-      "require": "./dist/*"
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
     },
     "./ts/*": {
       "import": "./dist/ts/*",
