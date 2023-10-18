@@ -21,7 +21,11 @@
     "noImplicitAny": false,
     "declaration": true,
     "declarationDir": "dist",
-    "declarationMap": true
+    "declarationMap": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxImportSource": "preact",
+    "jsxFragmentFactory": "Fragment",
   },
   "include": ["src/**/*"]
 }

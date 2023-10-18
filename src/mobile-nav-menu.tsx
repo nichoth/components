@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'preact'
 import { Signal } from '@preact/signals'
-import { html } from 'htm/preact'
 
 interface Props {
     isOpen:Signal<boolean>
@@ -13,15 +12,15 @@ export const MobileNav:FunctionComponent<Props> = function (props) {
         isOpen.value = false
     }
 
-    return html`<div class="mobile-nav-list${isOpen.value ? ' open' : ' closed'}">
+    return (<div className={'mobile-nav-list' + isOpen.value ? ' open' : ' closed'}>
         <ul>
-            ${Array.isArray(children) && children.map(el => {
-                return html`<li onclick=${navClick}>
-                    ${el}
-                </li>`
+            ${Array.isArray(children) && children.map((el, i) => {
+                return (<li key={i} onClick={navClick}>
+                    {el}
+                </li>)
             })}
         </ul>
-    </div>`
+    </div>)
 }
 
 export default MobileNav
