@@ -1,7 +1,9 @@
 import { FunctionComponent } from 'preact'
 
 export const PencilButton:FunctionComponent<{
-    className?:string
+    className?:string;
+    title?:string;
+    onClick:(ev:MouseEvent)=>any;
 }> = function PencilButton (props) {
     const cl = props.className
 
