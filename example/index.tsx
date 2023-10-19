@@ -20,6 +20,7 @@ import '../src/editable-field.css'
 import '../src/text-input.css'
 import '../src/hamburger.css'
 import '../src/mobile-nav-menu.css'
+import '../src/radio-group.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)
