@@ -2,7 +2,14 @@ import { FunctionComponent, render } from 'preact'
 import { useState } from 'preact/hooks'
 import Tonic from '@nichoth/tonic'
 import { useSignal } from '@preact/signals'
-import { TextInput, Button, CopyBtn, EditableField } from '../src/preact/index.js'
+import {
+    TextInput,
+    Button,
+    CopyBtn,
+    EditableField,
+    PencilButton,
+    RadioGroup
+} from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
 import '../src/z-index.css'
@@ -70,6 +77,22 @@ const Example:FunctionComponent<{}> = function () {
                 <form className="example-form">
                     <TextInput name="text" displayName="Input test" />
                 </form>
+            </div>
+
+            <div>
+                <h3>Pencil Button</h3>
+                <PencilButton onClick={(ev) => {
+                    // we are passed a click event
+                    ev.preventDefault()
+                    console.log('click')
+                }} />
+            </div>
+
+            <div>
+                <h3>Radio Group</h3>
+                <RadioGroup name="test-radio" legend="testing radio group"
+                    options={['aaa', 'bbb', 'ccc']} required={true}
+                />
             </div>
         </div>
     </div>)
