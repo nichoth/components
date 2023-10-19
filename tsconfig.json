@@ -9,7 +9,7 @@
     "allowJs": false,
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -24,8 +24,10 @@
     "declarationMap": true,
     "jsx": "preserve",
     "jsxFactory": "h",
-    "jsxImportSource": "preact",
-    "jsxFragmentFactory": "Fragment",
+    "jsxFragmentFactory": "Fragment"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "example/**/*",
+    "src/**/*"
+  ]
 }
