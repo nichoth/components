@@ -57,7 +57,7 @@ export const EditableField:FunctionComponent<Props> = function EditableField (
 
     return (
         <>
-            <span class="field">{value}</span>
+            <span className="field">{value}</span>
             <PencilButton onClick={_setEditing} title="edit" />
         </>
     )

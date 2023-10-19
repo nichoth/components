@@ -2,9 +2,9 @@ import { ComponentChildren, FunctionComponent } from 'preact'
 import { Signal } from '@preact/signals'
 
 interface Props {
-    children:ComponentChildren;
+    children?:ComponentChildren;
     onClick:()=>any;
-    isOpen:Signal<boolean>
+    isOpen:Signal<boolean>;
 }
 
 export const HamburgerWrapper:FunctionComponent<Props> = function (props) {
@@ -19,7 +19,7 @@ export const HamburgerWrapper:FunctionComponent<Props> = function (props) {
 export default HamburgerWrapper
 
 export function Hamburger ({ onClick, isOpen }) {
-    return (<div className={'hamburger' + isOpen.value ? ' open' : ''}>
+    return (<div className={'hamburger' + (isOpen.value ? ' open' : '')}>
         <input type="checkbox" id="checkbox" checked={isOpen} />
         <label class="burger" for="checkbox" onClick={onClick}>
             <button onClick={onClick}>

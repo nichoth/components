@@ -1,13 +1,27 @@
 import { FunctionComponent, render } from 'preact'
 import { useState } from 'preact/hooks'
 import Tonic from '@nichoth/tonic'
-import { Button, CopyBtn } from '../src/preact/index.js'
+import { useSignal } from '@preact/signals'
+import { TextInput, Button, CopyBtn, EditableField } from '../src/preact/index.js'
+import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
+import MobileNav from '../src/preact/mobile-nav-menu.jsx'
+import '../src/z-index.css'
 import '../src/button.css'
 import './example.css'
 import '../src/copy-btn.css'
+import '../src/editable-field.css'
+import '../src/text-input.css'
+import '../src/hamburger.css'
+import '../src/mobile-nav-menu.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)
+
+    const hamburgerOpen = useSignal(false)
+
+    function hamburgler () {
+        hamburgerOpen.value = !hamburgerOpen.value
+    }
 
     async function clicker (ev) {
         ev.preventDefault()
@@ -16,17 +30,47 @@ const Example:FunctionComponent<{}> = function () {
         setResolving(false)
     }
 
-    return (<div className="preact-example">
-        <h2>preact example</h2>
-        <Button
-            isSpinning={resolving}
-            onClick={clicker}
-        >
-            example
-        </Button>
+    async function saver (value) {
+        console.log('saving this...', value)
+        await sleep(1000)
+    }
 
-        <div>
-            <CopyBtn payload="copying things">copy</CopyBtn>
+    return (<div className="preact-example">
+        <HamburgerWrapper isOpen={hamburgerOpen} onClick={hamburgler} />
+        <MobileNav isOpen={hamburgerOpen}>
+            <a className="app-nav" href="/example">Example</a>
+            <a className="app-nav" href="/example2">Example2</a>
+            <a className="app-nav" href="/example3">Example3</a>
+        </MobileNav>
+
+        <div id="content">
+            <h2>preact example</h2>
+
+            <h3>Button</h3>
+            <Button
+                isSpinning={resolving}
+                onClick={clicker}
+            >
+                example
+            </Button>
+
+            <div>
+                <h3>Copy Btn</h3>
+                <CopyBtn payload="copying things">copy</CopyBtn>
+            </div>
+
+            <div>
+                <h3>Editable Field</h3>
+                <EditableField name="editable-field" value="edit this"
+                    onSave={saver} />
+            </div>
+
+            <div>
+                <h3>Text Input</h3>
+                <form className="example-form">
+                    <TextInput name="text" displayName="Input test" />
+                </form>
+            </div>
         </div>
     </div>)
 }

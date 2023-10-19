@@ -8,7 +8,7 @@ export const PencilButton:FunctionComponent<{
     const cl = props.className
 
     return (<button {...props}
-        className={'edit-pencil' + cl ? (' ' + cl) : ''}
+        className={'edit-pencil' + (cl ? (' ' + cl) : '')}
     >
         <span role="img" aria-label="edit">✏</span>
     </button>)

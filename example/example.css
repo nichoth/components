@@ -1,5 +1,30 @@
+h2 {
+    margin-top: 0;
+}
+
+h3 {
+    font-family: sans-serif;
+    border-bottom: 1px solid;
+    padding-left: 1rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+#content {
+    margin-top: 0;
+}
+
 .preact-example {
     & div {
         margin-top: 1rem;
     }
+
+    & .mobile-nav-list, & .hamburger, & .hamburger-wrapper {
+        margin-top: 0;
+    }
+}
+
+.example-form {
+    max-width: 40rem;
+    margin: 0 auto;
 }

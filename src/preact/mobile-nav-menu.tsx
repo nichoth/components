@@ -12,9 +12,9 @@ export const MobileNav:FunctionComponent<Props> = function (props) {
         isOpen.value = false
     }
 
-    return (<div className={'mobile-nav-list' + isOpen.value ? ' open' : ' closed'}>
+    return (<div className={('mobile-nav-list' + (isOpen.value ? ' open' : ' closed'))}>
         <ul>
-            ${Array.isArray(children) && children.map((el, i) => {
+            {Array.isArray(children) && children.map((el, i) => {
                 return (<li key={i} onClick={navClick}>
                     {el}
                 </li>)
