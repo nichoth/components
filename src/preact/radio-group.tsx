@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'preact'
 import kebabCase from 'just-kebab-case'
-import './radio-group.css'
 
 interface Props {
     id?:string

@@ -11,15 +11,16 @@ interface Props {
 
 export const CopyBtn:FunctionComponent<Props> = function CopyBtn (props) {
     const hasCopied = useSignal<boolean>(false)
+    const { payload, ..._props } = props
 
     function onClick (ev:MouseEvent) {
         ev.preventDefault()
-        clipboardCopy(props.payload)
+        clipboardCopy(payload)
         hasCopied.value = true
         if (props.onClick) props.onClick(ev)
     }
 
-    return (<button {...props}
+    return (<button {..._props}
         class={('copy-btn ' + (props.className || '')).trim()}
         onClick={onClick}
     >
