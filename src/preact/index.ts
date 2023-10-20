@@ -1,5 +1,6 @@
 export { Button } from './button.jsx'
 export { CopyBtn } from './copy-btn.jsx'
+export { CopyIconBtn } from './copy-btn.jsx'
 export { EditableField } from './editable-field.jsx'
 export { Hamburger } from './hamburger.jsx'
 export { MobileNav } from './mobile-nav-menu.jsx'

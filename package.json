@@ -28,7 +28,7 @@
     "./tonic/*": "./dist/tonic/*.js"
   },
   "dependencies": {
-    "@nichoth/tonic": "^15.1.2",
+    "@nichoth/tonic": "^15.1.3",
     "@preact/signals": "^1.1.2",
     "clipboard-copy": "^4.0.1",
     "just-kebab-case": "^4.2.0",

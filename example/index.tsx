@@ -1,11 +1,12 @@
 import { FunctionComponent, render } from 'preact'
 import { useState } from 'preact/hooks'
-import Tonic from '@nichoth/tonic'
+import './tonic.js'
 import { useSignal } from '@preact/signals'
 import {
     TextInput,
     Button,
     CopyBtn,
+    CopyIconBtn,
     EditableField,
     PencilButton,
     RadioGroup
@@ -68,6 +69,14 @@ const Example:FunctionComponent<{}> = function () {
             </div>
 
             <div>
+                <h3>Copy Icon Btn</h3>
+                <span>
+                    Copy this text
+                    <CopyIconBtn payload="copy this text" />
+                </span>
+            </div>
+
+            <div>
                 <h3>Editable Field</h3>
                 <EditableField name="editable-field" value="edit this"
                     onSave={saver} />
@@ -100,18 +109,6 @@ const Example:FunctionComponent<{}> = function () {
 }
 
 render(<Example />, document.getElementById('root-preact')!)
-
-class TonicExample extends Tonic {
-    render () {
-        // @ts-ignore
-        return this.html`<div style="margin-top: 2rem">
-            <hr />
-            <h2>tonic example</h2>
-        </div>`
-    }
-}
-
-Tonic.add(TonicExample)
 
 function sleep (ms) {
     return new Promise(resolve => {

@@ -14,14 +14,14 @@ const Button:FunctionComponent<Props> = function Button (props:Props) {
             onClick={props.onClick}
             disabled={true}
         >
-            <span class="btn-content">{props.children}</span>
+            <span className="btn-content">{props.children}</span>
         </button>) :
 
         (<button
             {..._props}
             className={((props.className || '') + ' btn').trim()}
         >
-            <span class="btn-content">{props.children}</span>
+            <span className="btn-content">{props.children}</span>
         </button>))
 }
 
