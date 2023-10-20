@@ -1,6 +1,22 @@
+// import { effect } from '@preact/signals'
 import Tonic from '@nichoth/tonic'
 
 export class HamburgerWrapper extends Tonic {
+    constructor () {
+        super()
+        console.log('thisssssss', this)
+        console.log('thisssssss', Object.keys(this))
+        console.log('this propsssss', this.props)
+        console.log('this props', this.props)
+        // let open = this.props.isopen.value
+        // effect(() => {
+        //     if (this.props.isopen.value !== open) {
+        //         open = this.props.isopen.value
+        //         this.reRender()
+        //     }
+        // })
+    }
+
     click (ev) {
         const el = Tonic.match(ev.target, '[data-open]')
 
@@ -11,6 +27,7 @@ export class HamburgerWrapper extends Tonic {
     }
 
     render () {
+        console.log('this props', this.props)
         const cl = ('tonic hamburger-wrapper' +
             (this.props.isopen.value ? ' open' : '')).trim()
 
@@ -25,7 +42,17 @@ export class HamburgerWrapper extends Tonic {
 
 export default HamburgerWrapper
 
+// observedAttributes
+
 export class HamburgerBody extends Tonic {
+    static observedAttributes = [
+        'isopen'
+    ]
+
+    attributeChangedCallback (name, old, newValue) {
+        console.log('got a change -- ', name, old, newValue)
+    }
+
     render () {
         const { isopen } = this.props
         console.log('rendering..........', this.props.isopen.value)

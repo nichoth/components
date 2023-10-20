@@ -3,21 +3,10 @@ import { SpinningButton } from '../src/tonic/spinning-button.js'
 import { CopyBtn, CopyIconBtn } from '../src/tonic/copy-btn.js'
 import { HamburgerWrapper, HamburgerBody } from '../src/tonic/hamburger.js'
 import { MobileNav } from '../src/tonic/mobile-nav-menu.js'
-import { signal, effect } from '@preact/signals'
+import { signal } from '@preact/signals'
 
 export class TonicExample extends Tonic {
     state = { isSpinning: false, isOpen: signal(false) }
-
-    constructor () {
-        super()
-        let isOpen = this.state.isOpen.value
-        effect(() => {
-            if (this.state.isOpen.value !== isOpen) {
-                isOpen = this.state.isOpen.value
-                this.reRender()
-            }
-        })
-    }
 
     async click (ev) {
         ev.preventDefault()
@@ -36,14 +25,13 @@ export class TonicExample extends Tonic {
     }
 
     render () {
+        console.log('this state', this.state.isOpen.value)
         // @ts-ignore
         return this.html`<div style="margin-top: 2rem">
             <hr />
             <h2>tonic example</h2>
-            <hamburger-wrapper
-                isopen=${this.state.isOpen}
-                id="tonic-hamburger">
-            </hamburger-wrapper>
+            <hamburger-wrapper isopen=${this.state.isOpen} id="tonic-hamburger"></hamburger-wrapper>
+            <!-- <hamburger-wrapper isopen=${'bar'} id="tonic-hamburger"></hamburger-wrapper> -->
 
             <mobile-nav isopen=${this.state.isOpen}>
                 <a className="app-nav" href="/example">Example</a>
