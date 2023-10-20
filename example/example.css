@@ -1,5 +1,9 @@
 h2 {
     margin-top: 0;
+
+    &.tonic-example {
+        margin-top: 6rem;
+    }
 }
 
 h3 {
@@ -15,7 +19,7 @@ h3 {
 }
 
 .preact-example {
-    & div {
+    & > div {
         margin-top: 1rem;
     }
 
@@ -27,8 +31,4 @@ h3 {
 .example-form {
     max-width: 40rem;
     margin: 0 auto;
-}
-
-.tonic.hamburger-wrapper {
-
 }

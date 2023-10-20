@@ -9,7 +9,8 @@ import {
     CopyIconBtn,
     EditableField,
     PencilButton,
-    RadioGroup
+    RadioGroup,
+    NumberInput
 } from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
@@ -22,9 +23,11 @@ import '../src/text-input.css'
 import '../src/hamburger.css'
 import '../src/mobile-nav-menu.css'
 import '../src/radio-group.css'
+import '../src/number-input.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)
+    const [count, setCount] = useState<number>(0)
 
     const hamburgerOpen = useSignal(false)
 
@@ -102,6 +105,22 @@ const Example:FunctionComponent<{}> = function () {
                 <h3>Radio Group</h3>
                 <RadioGroup name="test-radio" legend="testing radio group"
                     options={['aaa', 'bbb', 'ccc']} required={true}
+                />
+            </div>
+
+            <div>
+                <h3>Number Input</h3>
+                <NumberInput
+                    min={0}
+                    max={7}
+                    name="test-input"
+                    value={count}
+                    onIncrease={() => {
+                        setCount(count + 1)
+                    }}
+                    onDecrease={() => {
+                        setCount(count - 1)
+                    }}
                 />
             </div>
         </div>

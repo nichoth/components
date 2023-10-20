@@ -1,8 +1,24 @@
+import { effect } from '@preact/signals'
 import Tonic from '@nichoth/tonic'
 
 export class MobileNav extends Tonic {
     click () {
         this.props.isopen.value = false
+    }
+
+    willConnect () {
+        let open = this.props.isopen.value
+
+        this.dispose = effect(() => {
+            if (this.props.isopen.value !== open) {
+                open = this.props.isopen.value
+                this.reRender()
+            }
+        })
+    }
+
+    disconnected () {
+        this.dispose()
     }
 
     render () {
@@ -14,9 +30,7 @@ export class MobileNav extends Tonic {
         /* eslint-disable */
         return this.html`<div class="${className}">
             <ul>
-                ${this.children && Array.from(this.children).map((el) => {
-                    return this.html`<li>${el}</li>`
-                })}
+                ${this.children}
             </ul>
         </div>`
         /* eslint-enable */

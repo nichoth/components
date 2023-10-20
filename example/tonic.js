@@ -29,9 +29,8 @@ export class TonicExample extends Tonic {
         // @ts-ignore
         return this.html`<div style="margin-top: 2rem">
             <hr />
-            <h2>tonic example</h2>
+            <h2 class="tonic-example">tonic example</h2>
             <hamburger-wrapper isopen=${this.state.isOpen} id="tonic-hamburger"></hamburger-wrapper>
-            <!-- <hamburger-wrapper isopen=${'bar'} id="tonic-hamburger"></hamburger-wrapper> -->
 
             <mobile-nav isopen=${this.state.isOpen}>
                 <a className="app-nav" href="/example">Example</a>
