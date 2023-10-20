@@ -5,6 +5,8 @@ import { CopyBtn, CopyIconBtn } from '../src/tonic/copy-btn.js'
 import { HamburgerWrapper, HamburgerBody } from '../src/tonic/hamburger.js'
 import { MobileNav } from '../src/tonic/mobile-nav-menu.js'
 import { NumberInput } from '../src/tonic/number-input.js'
+import { PencilBtn } from '../src/tonic/pencil-btn.js'
+import { RadioGroup } from '../src/tonic/radio-group.js'
 
 export class TonicExample extends Tonic {
     state = {
@@ -79,18 +81,32 @@ export class TonicExample extends Tonic {
                     value=${this.state.numberExample}
                 ></number-input>
             </div>
+
+            <div class="pencil">
+                <h3>Pencil Button</h3>
+                <pencil-btn></pencil-btn>
+            </div>
+
+            <div>
+                <h3>Radio Group</h3>
+                <radio-group
+                    name="test-radios"
+                    legend="radio test"
+                    required=${false}
+                    options=${['aaa', 'bbb', 'ccc']}
+                ></radio-group>
+            </div>
         </div>`
     }
 }
 
 /**
- * props
- * - onIncrease?:()=>any
- * - onDecrease?:()=>any
- * - value:number
- * - min:number
- * - max:number
- * - name:string
+ * {
+ *   name:string,
+ *   legend:string,
+ *   options:string[],
+ *   required?:boolean
+ * }
  */
 
 Tonic.add(MobileNav)
@@ -101,6 +117,8 @@ Tonic.add(CopyIconBtn)
 Tonic.add(HamburgerWrapper)
 Tonic.add(HamburgerBody)
 Tonic.add(NumberInput)
+Tonic.add(PencilBtn)
+Tonic.add(RadioGroup)
 
 function sleep (ms) {
     return new Promise(resolve => {

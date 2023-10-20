@@ -10,14 +10,14 @@ interface Props {
 }
 
 export const RadioGroup:FunctionComponent<Props> = function (props) {
-    const { name, options, legend, required, id } = props
+    const { name, options, legend, required } = props
 
-    return (<fieldset className="form-group radios">
+    return (<fieldset className="form-group radios" id={props.id}>
         <legend>{legend}</legend>
 
         {options.map((opt, i) => {
             return (<label key={i} className="radio-input">
-                <input type="radio" name={name} required={required} id={id}
+                <input type="radio" name={name} required={required}
                     value={kebabCase(opt)}
                 />
                 {opt}

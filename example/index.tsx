@@ -8,7 +8,7 @@ import {
     CopyBtn,
     CopyIconBtn,
     EditableField,
-    PencilButton,
+    PencilBtn,
     RadioGroup,
     NumberInput
 } from '../src/preact/index.js'
@@ -21,6 +21,7 @@ import '../src/copy-btn.css'
 import '../src/editable-field.css'
 import '../src/text-input.css'
 import '../src/hamburger.css'
+import '../src/pencil-btn.css'
 import '../src/mobile-nav-menu.css'
 import '../src/radio-group.css'
 import '../src/number-input.css'
@@ -93,7 +94,7 @@ const Example:FunctionComponent<{}> = function () {
 
             <div>
                 <h3>Pencil Button</h3>
-                <PencilButton onClick={(ev) => {
+                <PencilBtn onClick={(ev) => {
                     // we are passed a click event
                     ev.preventDefault()
                     console.log('click')

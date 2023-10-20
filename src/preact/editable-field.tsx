@@ -1,6 +1,6 @@
 import { FunctionComponent, JSX } from 'preact'
 import { useState } from 'preact/hooks'
-import { PencilButton } from './pencil-btn.jsx'
+import { PencilBtn } from './pencil-btn.jsx'
 
 interface Props extends JSX.HTMLAttributes<HTMLInputElement> {
     onSave:(value:string) => Promise<any>
@@ -58,7 +58,7 @@ export const EditableField:FunctionComponent<Props> = function EditableField (
     return (
         <>
             <span className="field">{value}</span>
-            <PencilButton onClick={_setEditing} title="edit" />
+            <PencilBtn onClick={_setEditing} title="edit" />
         </>
     )
 }

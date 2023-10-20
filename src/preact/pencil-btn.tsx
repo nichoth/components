@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'preact'
 
-export const PencilButton:FunctionComponent<{
+export const PencilBtn:FunctionComponent<{
     className?:string;
     title?:string;
     onClick:(ev:MouseEvent)=>any;
