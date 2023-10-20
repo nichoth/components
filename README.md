@@ -42,20 +42,20 @@ const App = function App () {
     }
 
     return <div class="app">
-        <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler} />
-        <${MobileNav} isOpen=${isOpen}>
+        <HamburgerWrapper isOpen={isOpen} onClick={mobileNavHandler} />
+        <MobileNav isOpen={isOpen}>
             <a href="/baloney">baloney</a>
             <a href="/test">testing</a>
         <//>
 
-        <${CopyBtn} payload=${'hurray'}>copy something<//>
+        <CopyBtn payload="hurray">copy something</CopyBtn>
 
-        <p>Copy this <${CopyIconBtn} payload=${'Copy this'}><//></p>
+        <p>Copy this <CopyIconBtn payload="Copy this" /></p>
     </div>
 }
 
 const el = document.getElementById('root')
-if (el) render(html`<${App} />`, el)
+if (el) render(<App />, el)
 ```
 
 ### css
