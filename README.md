@@ -16,7 +16,7 @@ The `preact` version is recommended, because some of the animations do not work 
 
 ### ESM
 ```js
-import Hamburger from '@nichoth/components/hamburger.js'
+import Hamburger from '@nichoth/components/preact/hamburger.jsx'
 import '@nichoth/hamburger.css'
 ```
 
@@ -24,11 +24,10 @@ import '@nichoth/hamburger.css'
 ```js
 // @ts-check
 import { render } from 'preact'
-import { html } from 'htm/preact'
 import { useSignal } from '@preact/signals'
-import HamburgerWrapper from '@nichoth/components/hamburger'
-import MobileNav from '@nichoth/components/mobile-nav-menu'
-import { CopyBtn, CopyIconBtn } from '@nichoth/components/copy-btn'
+import HamburgerWrapper from '@nichoth/components/preact/hamburger'
+import MobileNav from '@nichoth/components/preact/mobile-nav-menu'
+import { CopyBtn, CopyIconBtn } from '@nichoth/components/preact/copy-btn'
 import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
@@ -42,7 +41,7 @@ const App = function App () {
         isOpen.value = !isOpen.value
     }
 
-    return html`<div class="app">
+    return <div class="app">
         <${HamburgerWrapper} isOpen=${isOpen} onClick=${mobileNavHandler} />
         <${MobileNav} isOpen=${isOpen}>
             <a href="/baloney">baloney</a>
@@ -52,7 +51,7 @@ const App = function App () {
         <${CopyBtn} payload=${'hurray'}>copy something<//>
 
         <p>Copy this <${CopyIconBtn} payload=${'Copy this'}><//></p>
-    </div>`
+    </div>
 }
 
 const el = document.getElementById('root')
