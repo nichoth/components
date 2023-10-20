@@ -11,7 +11,7 @@ npm i -S @nichoth/components
 ## use
 I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/) components; you will need to install `preact` or `tonic`.
 
-The `preact` version is recommended, because some of the animations do not work well with the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work will with tonic.
+The `preact` version is recommended, because some of the animations do not work well with the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work well.
 
 
 ### ESM
