@@ -9,18 +9,15 @@ npm i -S @nichoth/components
 
 
 ## use
-I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are all [preact](https://www.npmjs.com/package/preact) components; you will need to install `preact`.
+I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/) components; you will need to install `preact` or `tonic`.
+
+The `preact` version is recommended, because some of the animations do not work well with the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work will with tonic.
 
 
 ### ESM
 ```js
 import Hamburger from '@nichoth/components/hamburger.js'
 import '@nichoth/hamburger.css'
-```
-
-### CJS
-```js
-const Hamburger = require('@nichoth/components/hamburger.cjs').default
 ```
 
 ## example
@@ -36,9 +33,6 @@ import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
 import '@nichoth/components/z-index.css'
-
-// use CJS like this, with `.cjs` extension
-// const { CopyBtn } = require('@nichoth/components/copy-btn.cjs)
 
 const App = function App () {
     const isOpen = useSignal(false)
