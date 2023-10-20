@@ -1,14 +1,15 @@
-import { html } from 'htm/preact'
 import { FunctionComponent, JSX } from 'preact'
 import { useState } from 'preact/hooks'
-import { PencilButton } from './pencil-btn'
+import { PencilBtn } from './pencil-btn.jsx'
 
 interface Props extends JSX.HTMLAttributes<HTMLInputElement> {
     onSave:(value:string) => Promise<any>
     name:string
 }
 
-export const EditableField:FunctionComponent<Props> = function EditableField (props:Props) {
+export const EditableField:FunctionComponent<Props> = function EditableField (
+    props:Props
+) {
     const { value, onSave, name } = props
     const [isEditing, setEditing] = useState(false)
     const [isResolving, setResolving] = useState(false)
@@ -28,9 +29,15 @@ export const EditableField:FunctionComponent<Props> = function EditableField (pr
         const val = ev.target.elements[name].value
         setResolving(true)
 
-        await onSave(val)
-        setResolving(false)
-        setEditing(false)
+        try {
+            await onSave(val)
+            setResolving(false)
+            setEditing(false)
+        } catch (err) {
+            setResolving(false)
+            setEditing(false)
+            console.log('error...', err)
+        }
     }
 
     const _class = 'editable-field' +
@@ -38,20 +45,20 @@ export const EditableField:FunctionComponent<Props> = function EditableField (pr
         (props.className ? (' ' + props.className) : '')
 
     if (isEditing) {
-        return html`<form onreset=${stopEditing}
-            onsubmit=${_onSave}
-            class=${_class}
+        return (<form onReset={stopEditing}
+            onSubmit={_onSave}
+            class={_class}
         >
-            <input name=${name} id=${name} placeholder="${value}" />
-            <button type="reset" disabled=${isResolving}>cancel</button>
-            <button type="submit" disabled=${isResolving}>save</button>
-        </form>`;
+            <input name={name} id={name} placeholder={'' + value} />
+            <button type="reset" disabled={isResolving}>cancel</button>
+            <button type="submit" disabled={isResolving}>save</button>
+        </form>)
     }
 
-    return html`
-        <span class="field">${value}</span>
-
-        <!-- pencil emoji -->
-        <${PencilButton} onClick=${_setEditing} title="edit" />
-    `
+    return (
+        <>
+            <span className="field">{value}</span>
+            <PencilBtn onClick={_setEditing} title="edit" />
+        </>
+    )
 }

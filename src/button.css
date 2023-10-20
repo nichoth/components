@@ -3,10 +3,10 @@
     to {transform: rotate(360deg);}
 }
 
-.form-stuff {
+.btn {
     --button-color: #4281CB;
 
-    & button {
+    &button {
         margin-right: 1rem;
         position: relative;
         color: white;

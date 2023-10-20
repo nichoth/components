@@ -1,3 +1,9 @@
+.editable-field {
+    & button {
+        margin-left: 1rem;
+    }
+}
+
 .edit-pencil {
     position: relative;
     top: 6px;

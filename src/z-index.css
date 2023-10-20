@@ -1,15 +1,11 @@
-.burger {
-    z-index: 99;
-}
-
 .hamburger-wrapper {
-    &.open {
-        z-index: 99;
-    }
+    z-index: 100;
 }
 
-.mobile-nav-list {
-    &.open {
-        z-index: 1;
-    }
+.modal-window {
+    z-index: 200;
+}
+
+.toast {
+    z-index: 300;
 }

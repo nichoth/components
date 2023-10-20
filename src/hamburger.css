@@ -1,4 +1,14 @@
 .hamburger-wrapper {
+    --hamburger-color: var(--font-color);
+
+    padding-right: 1rem;
+    position: absolute;
+    margin-left: auto;
+    width: 10%;
+    float: right;
+    justify-self: right;
+    right: 0;
+
     text-align: right;
     padding-right: 1rem;
     display: none;
@@ -63,9 +73,11 @@
 
             &.bottom {
                 transform: none;
+                z-index: 99;
             }
             &.top {
                 transform: none;
+                z-index: 99;
             }
         }
     }
@@ -83,6 +95,7 @@
     }
     
     & .burger {
+        z-index: 200;
         height: 31px;
         width: 31px;
         display: block;
@@ -91,18 +104,34 @@
     
     & .container {
         position: absolute;
-        left: 7px;
-        top: 15px;
+        left: 5px;
+        top: -5px;
     }
     
     & .line {
-        height: 1px;
+        height: 2px;
         border-radius: 3px;
         background: var(--hamburger-color, black);
-        width: 17px;
+        width: 25px;
     }
     
     & input {
         display: none;
+    }
+}
+
+.hamburger-wrapper {
+    padding-right: 1rem;
+    position: absolute;
+    margin-left: auto;
+    width: 10%;
+    float: right;
+    justify-self: right;
+    right: 0;
+}
+
+.hamburger {
+    & .line {
+        width: 25px;
     }
 }

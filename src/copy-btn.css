@@ -1,3 +1,7 @@
+.copy-btn {
+    min-width: 7em;
+}
+
 .copy-icon-btn {
     background-color: transparent;
     width: 1.8rem;
