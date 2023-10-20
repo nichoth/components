@@ -27,8 +27,7 @@ import '../src/number-input.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)
-    const [count, setCount] = useState<number>(0)
-
+    const count = useSignal(3)
     const hamburgerOpen = useSignal(false)
 
     function hamburgler () {
@@ -110,16 +109,21 @@ const Example:FunctionComponent<{}> = function () {
 
             <div>
                 <h3>Number Input</h3>
+                <p>
+                    A number input that does not go above the max or below the
+                    min.
+                </p>
+
                 <NumberInput
                     min={0}
                     max={7}
                     name="test-input"
                     value={count}
                     onIncrease={() => {
-                        setCount(count + 1)
+                        console.log('increase')
                     }}
                     onDecrease={() => {
-                        setCount(count - 1)
+                        console.log('decrease')
                     }}
                 />
             </div>

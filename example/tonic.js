@@ -66,6 +66,12 @@ export class TonicExample extends Tonic {
 
             <div>
                 <h3>Number Input</h3>
+                <p>
+                    A number input that does not go above the max or below the
+                    min. Takes <code>{ value:Signal<number> }</code> as a prop for
+                    the value.
+                </p>
+
                 <number-input
                     name="number-example"
                     min=3

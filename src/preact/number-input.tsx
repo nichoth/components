@@ -1,12 +1,13 @@
 import { FunctionComponent, JSX } from 'preact'
+import { Signal } from '@preact/signals'
 
 interface Props {
     name:string;
     min:number;
     max:number;
-    value:number;
-    onIncrease:(ev:MouseEvent)=>any;
-    onDecrease:(ev:MouseEvent)=>any;
+    value:Signal<number>;
+    onIncrease?:(ev:MouseEvent)=>any;
+    onDecrease?:(ev:MouseEvent)=>any;
     onChange?:(ev:JSX.TargetedEvent)=>any;
 }
 
@@ -19,7 +20,7 @@ export const NumberInput:FunctionComponent<Props> = function NumberInput (props)
             max={max}
             min={min}
             onChange={onChange}
-            value={value}
+            value={value.value}
             name={name}
         />
 
@@ -27,14 +28,24 @@ export const NumberInput:FunctionComponent<Props> = function NumberInput (props)
             <div class="number-button number-up">
                 <button onClick={ev => {
                     ev.preventDefault()
-                    onIncrease(ev)
+                    if (value.value >= max) {
+                        value.value = max
+                        return onIncrease && onIncrease(ev)
+                    }
+                    value.value = value.value + 1
+                    onIncrease && onIncrease(ev)
                 }}>+</button>
             </div>
 
             <div class="number-button number-down">
                 <button onClick={ev => {
                     ev.preventDefault()
-                    onDecrease(ev)
+                    if (value.value <= min) {
+                        value.value = min
+                        return onDecrease && onDecrease(ev)
+                    }
+                    value.value = value.value - 1
+                    onDecrease && onDecrease(ev)
                 }}>-</button>
             </div>
         </div>
