@@ -1,12 +1,17 @@
 import Tonic from '@nichoth/tonic'
+import { signal } from '@preact/signals'
 import { SpinningButton } from '../src/tonic/spinning-button.js'
 import { CopyBtn, CopyIconBtn } from '../src/tonic/copy-btn.js'
 import { HamburgerWrapper, HamburgerBody } from '../src/tonic/hamburger.js'
 import { MobileNav } from '../src/tonic/mobile-nav-menu.js'
-import { signal } from '@preact/signals'
+import { NumberInput } from '../src/tonic/number-input.js'
 
 export class TonicExample extends Tonic {
-    state = { isSpinning: false, isOpen: signal(false) }
+    state = {
+        isSpinning: false,
+        isOpen: signal(false),
+        numberExample: signal(3)
+    }
 
     async click (ev) {
         ev.preventDefault()
@@ -58,9 +63,29 @@ export class TonicExample extends Tonic {
                     <copy-icon-btn payload="this is an example"></copy-icon-btn>
                 </span>
             </div>
+
+            <div>
+                <h3>Number Input</h3>
+                <number-input
+                    name="number-example"
+                    min=3
+                    max=7
+                    value=${this.state.numberExample}
+                ></number-input>
+            </div>
         </div>`
     }
 }
+
+/**
+ * props
+ * - onIncrease?:()=>any
+ * - onDecrease?:()=>any
+ * - value:number
+ * - min:number
+ * - max:number
+ * - name:string
+ */
 
 Tonic.add(MobileNav)
 Tonic.add(SpinningButton)
@@ -69,6 +94,7 @@ Tonic.add(CopyBtn)
 Tonic.add(CopyIconBtn)
 Tonic.add(HamburgerWrapper)
 Tonic.add(HamburgerBody)
+Tonic.add(NumberInput)
 
 function sleep (ms) {
     return new Promise(resolve => {
