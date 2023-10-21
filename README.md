@@ -11,10 +11,123 @@ I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, be
 
 The `preact` version is recommended, because some of the animations do not work well in the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work well.
 
-### ESM
+## API
+
+### Button
 ```js
-import { Hamburger } from '@nichoth/components/preact/hamburger.jsx'
-import '@nichoth/hamburger.css'
+import { Button } from '@nichoth/components/preact/button'
+
+<Button
+    isSpinning={resolving}
+    onClick={clicker}
+>
+    example
+</Button>
+```
+
+### CopyBtn
+```jsx
+import { CopyBtn } from '@nichoth/components/preact/copy-btn'
+
+<CopyBtn payload="copying things">copy</CopyBtn>
+```
+
+### CopyIconBtn
+```js
+import { CopyIconBtn } from '@nicohoth/components/preact/copy-icon-btn'
+// ...
+<span>
+    Copy this text
+    <CopyIconBtn payload="copy this text" />
+</span>
+```
+
+### Editable Field
+```js
+import { EditableField } from '@nichoth/components/preact/editable-field'
+// ...
+<EditableField
+    name="editable-field"
+    value="edit this"
+    onSave={saver}
+/>
+```
+
+### TextInput
+```js
+import { TextInput } from '@nichoth/components/preact/text-input'
+// ...
+<form className="example-form">
+    <TextInput name="text" displayName="Input test" />
+</form>
+```
+
+### PencilBtn
+```js
+import { PencilBtn } from '@nichoth/components/preact/pencil-btn'
+<PencilBtn onClick={(ev) => {
+    // we are passed a `click` event
+    ev.preventDefault()
+    console.log('click')
+}} />
+```
+
+### RadioGroup
+```js
+import { RadioGroup } from '@nichoth/components/preact/radio-group'
+<RadioGroup
+    name="test-radio"
+    legend="testing radio group"
+    options={['aaa', 'bbb', 'ccc']}
+    required={true}
+/>
+```
+
+### NumberInput
+```js
+import { NumberInput } from '@nichoth/components/preact/number-input'
+
+const count = useSignal(3)
+// ...
+<NumberInput
+    min={0}
+    max={7}
+    name="test-input"
+    value={count}
+    onIncrease={() => {
+        console.log('increase')
+    }}
+    onDecrease={() => {
+        console.log('decrease')
+    }}
+/>
+```
+
+### ReactiveForm
+A `form` element that uses HTML attributes to check validity, and enables or
+disables the submit button as appropriate.
+
+```js
+import { ReactiveForm } from '@nichoth/components/preact/reactive-form'
+
+<ReactiveForm
+    onSubmit={async (ev:SubmitEvent) => {
+        ev.preventDefault()
+        const text = ((ev.target as HTMLFormElement)
+            .elements
+            .namedItem('text') as HTMLInputElement)
+
+        await sleep(2000)
+
+        console.log('resolved...', text.value)
+    }}
+>
+    <TextInput
+        required={true}
+        displayName="text input"
+        name="text"
+    />
+</ReactiveForm>
 ```
 
 ## example
