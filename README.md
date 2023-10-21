@@ -1,12 +1,10 @@
 # components
 A collection of UI components made with [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/).
 
-
 ## install
 ```
 npm i -S @nichoth/components
 ```
-
 
 ## use
 I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, because it is easy. These are [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/) components; you will need to install `preact` or `tonic`.
@@ -20,6 +18,9 @@ import '@nichoth/hamburger.css'
 ```
 
 ## example
+
+[See a live demo](https://nichoth.github.io/components/)
+
 ```js
 import { render } from 'preact'
 import { useSignal } from '@preact/signals'
