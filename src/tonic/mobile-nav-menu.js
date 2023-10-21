@@ -22,7 +22,6 @@ export class MobileNav extends Tonic {
     }
 
     render () {
-        console.log('render nav menu', this.props)
         const className = 'mobile-nav-list' + (this.props.isopen.value ?
             ' open' :
             ' closed')

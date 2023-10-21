@@ -41,9 +41,9 @@ export class HamburgerWrapper extends Tonic {
 export default HamburgerWrapper
 
 export class HamburgerBody extends Tonic {
-    attributeChangedCallback (name, old, newValue) {
-        console.log('got a change -- ', name, old, newValue)
-    }
+    // attributeChangedCallback (name, old, newValue) {
+    //     console.log('got a change -- ', name, old, newValue)
+    // }
 
     render () {
         const { isopen } = this.props

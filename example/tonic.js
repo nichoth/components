@@ -32,7 +32,6 @@ export class TonicExample extends Tonic {
     }
 
     render () {
-        console.log('this state', this.state.isOpen.value)
         // @ts-ignore
         return this.html`<div style="margin-top: 2rem">
             <hr />
