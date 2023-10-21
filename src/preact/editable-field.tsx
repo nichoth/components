@@ -29,15 +29,9 @@ export const EditableField:FunctionComponent<Props> = function EditableField (
         const val = ev.target.elements[name].value
         setResolving(true)
 
-        try {
-            await onSave(val)
-            setResolving(false)
-            setEditing(false)
-        } catch (err) {
-            setResolving(false)
-            setEditing(false)
-            console.log('error...', err)
-        }
+        await onSave(val)
+        setResolving(false)
+        setEditing(false)
     }
 
     const _class = 'editable-field' +

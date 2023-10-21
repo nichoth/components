@@ -10,7 +10,8 @@ import {
     EditableField,
     PencilBtn,
     RadioGroup,
-    NumberInput
+    NumberInput,
+    ReactiveForm
 } from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
@@ -127,6 +128,34 @@ const Example:FunctionComponent<{}> = function () {
                         console.log('decrease')
                     }}
                 />
+            </div>
+
+            <div class="form-demo">
+                <h3>Reactive Form</h3>
+                <p>
+                    A <code>form</code> element that uses HTML attributes to
+                    check validity, and enables or disables the submit button
+                    depending on validity.
+                </p>
+
+                <ReactiveForm
+                    onSubmit={async (ev:SubmitEvent) => {
+                        ev.preventDefault()
+                        const text = ((ev.target as HTMLFormElement)
+                            .elements
+                            .namedItem('text') as HTMLInputElement)
+
+                        await sleep(2000)
+
+                        console.log('resolved...', text.value)
+                    }}
+                >
+                    <TextInput
+                        required={true}
+                        displayName="text input"
+                        name="text"
+                    />
+                </ReactiveForm>
             </div>
         </div>
     </div>)
