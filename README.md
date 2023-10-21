@@ -15,7 +15,7 @@ The `preact` version is recommended, because some of the animations do not work 
 
 ### ESM
 ```js
-import Hamburger from '@nichoth/components/preact/hamburger.jsx'
+import { Hamburger } from '@nichoth/components/preact/hamburger.jsx'
 import '@nichoth/hamburger.css'
 ```
 
