@@ -1,5 +1,5 @@
 # components
-A collection of UI components made with [preact](https://www.npmjs.com/package/preact).
+A collection of UI components made with [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/).
 
 
 ## install
