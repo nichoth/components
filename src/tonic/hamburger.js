@@ -47,7 +47,6 @@ export class HamburgerBody extends Tonic {
 
     render () {
         const { isopen } = this.props
-        console.log('rendering..........', this.props.isopen.value)
 
         return (this.html`<div class="${'hamburger' + (isopen.value ? ' open' : '')}">
             <input type="checkbox" id="checkbox" checked=${isopen.value} />
