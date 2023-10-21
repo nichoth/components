@@ -135,7 +135,7 @@ const Example:FunctionComponent<{}> = function () {
                 <p>
                     A <code>form</code> element that uses HTML attributes to
                     check validity, and enables or disables the submit button
-                    depending on validity.
+                    as appropriate.
                 </p>
 
                 <ReactiveForm
