@@ -1,6 +1,8 @@
 # components
 A collection of UI components made with [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/).
 
+[See a live demo](https://nichoth.github.io/components/)
+
 ## install
 ```
 npm i -S @nichoth/components
@@ -131,8 +133,6 @@ import { ReactiveForm } from '@nichoth/components/preact/reactive-form'
 ```
 
 ## example
-
-[See a live demo](https://nichoth.github.io/components/)
 
 ```js
 import { render } from 'preact'
