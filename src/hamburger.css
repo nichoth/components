@@ -1,6 +1,9 @@
-.hamburger-wrapper {
-    --hamburger-color: var(--font-color);
+:root {
+    --font-color: #FAFAFA;
+    --hamburger-color: black;
+}
 
+.hamburger-wrapper {
     padding-right: 1rem;
     position: absolute;
     margin-left: auto;
