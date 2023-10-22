@@ -9,3 +9,7 @@ export { PencilBtn } from './pencil-btn.jsx'
 export { RadioGroup } from './radio-group.jsx'
 export { ReactiveForm } from './reactive-form.jsx'
 export { TextInput } from './text-input.jsx'
+export {
+    ButtonOutline,
+    Primary as ButtonOutlinePrimary
+} from './button-outline.jsx'

@@ -1,0 +1,78 @@
+:root {
+    --button-outine-color: black;
+    --button-primary-outline: #0077ff;
+    --button-outine-primary-bg-hover: rgb(0 255 255 / 28%);
+    --button-outline-disabled-ol: #0077ff5c;
+}
+
+button.btn-outline {
+    position: relative;
+    border: none;
+    outline: 3px solid;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    background-color: transparent;
+    transition: 0.4s all;
+
+    &:hover {
+        outline-width: 5px;
+
+        &:disabled {
+            background-color: transparent;
+        }
+    }
+
+    &.primary {
+        outline-color: var(--button-primary-outline, #0077ff);
+
+        &:hover {
+            background-color: var(
+                --button-outine-primary-bg-hover,
+                rgb(0 255 255 / 28%)
+            );
+
+            &:disabled {
+                background-color: transparent;
+            }
+        }
+
+        &:disabled {
+            outline-color: var(--button-outline-disabled-ol, #0077ff5c);
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+
+    &.spinning {
+        opacity: 0.6;
+
+        .btn-content {
+            visibility: hidden;
+        }
+
+        &:hover {
+            cursor: initial;
+        }
+
+        &::after {
+            content: "";
+            background: transparent;
+            box-sizing: border-box;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            border-top: 2px solid var(--button-outline-color, black);
+            border-right: 2px solid transparent;
+            animation: spinner 0.6s linear infinite;
+        }
+    }
+}

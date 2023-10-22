@@ -11,7 +11,9 @@ import {
     PencilBtn,
     RadioGroup,
     NumberInput,
-    ReactiveForm
+    ReactiveForm,
+    ButtonOutline,
+    ButtonOutlinePrimary
 } from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
@@ -26,6 +28,7 @@ import '../src/pencil-btn.css'
 import '../src/mobile-nav-menu.css'
 import '../src/radio-group.css'
 import '../src/number-input.css'
+import '../src/button-outline.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)
@@ -66,6 +69,36 @@ const Example:FunctionComponent<{}> = function () {
             >
                 example
             </Button>
+
+            <div>
+                <h3>Button Outline</h3>
+                <ButtonOutline
+                    onClick={ev => {
+                        ev.preventDefault()
+                        console.log('click')
+                        // if you return a promise, then the button
+                        // will spin until it resolves
+                        return sleep(2000)
+                    }}
+                >
+                    example
+                </ButtonOutline>
+            </div>
+
+            <div>
+                <h3>Button Outline Primary</h3>
+                <ButtonOutlinePrimary
+                    onClick={ev => {
+                        ev.preventDefault()
+                        console.log('click')
+                        // if you return a promise, then the button
+                        // will spin until it resolves
+                        return sleep(2000)
+                    }}
+                >
+                    example
+                </ButtonOutlinePrimary>
+            </div>
 
             <div>
                 <h3>Copy Btn</h3>

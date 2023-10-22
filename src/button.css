@@ -1,13 +1,13 @@
+:root {
+    --button-color: #4281CB;
+}
 
 @keyframes spinner {
     to {transform: rotate(360deg);}
 }
 
 .btn {
-    --button-color: #4281CB;
-
     &button {
-        margin-right: 1rem;
         position: relative;
         color: white;
         background-color: var(--button-color);

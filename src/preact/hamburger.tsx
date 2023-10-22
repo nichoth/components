@@ -20,8 +20,8 @@ export default HamburgerWrapper
 
 export function Hamburger ({ onClick, isOpen }) {
     return (<div className={'hamburger' + (isOpen.value ? ' open' : '')}>
-        <input type="checkbox" id="checkbox" checked={isOpen} />
-        <label class="burger" for="checkbox" onClick={onClick}>
+        <input type="checkbox" id="burger-checkbox" checked={isOpen} />
+        <label class="burger" for="burger-checkbox" onClick={onClick}>
             <button onClick={onClick}>
                 <div class="container top">
                     <div className="line top" />

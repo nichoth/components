@@ -27,6 +27,45 @@ import { Button } from '@nichoth/components/preact/button'
 </Button>
 ```
 
+### Button Outline
+If you return a promise from the `onClick` event handler, then the button will spin until the promise resolves.
+
+Takes an optional signal for `isSpinning`. To control the spinning state of the button, eg for a form submit, pass in a signal and update its value.
+
+Looks for a few css variables:
+```css
+:root {
+    --button-outine-color: black;
+    --button-primary-outline: #0077ff;
+    --button-outine-primary-bg-hover: rgb(0 255 255 / 28%);
+    --button-outline-disabled-ol: #0077ff5c;
+}
+```
+
+```ts
+interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
+    isSpinning?: Signal<boolean>,
+    className?: string,
+    onClick?: (ev:MouseEvent) => any
+}
+```
+
+```js
+import { ButtonOutine } from '@nichoth/components/preact/button-outline.jsx'
+
+<ButtonOutline
+    onClick={ev => {
+        ev.preventDefault()
+        console.log('click')
+        // if you return a promise, then the button
+        // will spin until it resolves
+        return sleep(2000)
+    }}
+>
+    example
+</ButtonOutline>
+```
+
 ### CopyBtn
 ```jsx
 import { CopyBtn } from '@nichoth/components/preact/copy-btn'

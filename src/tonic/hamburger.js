@@ -49,10 +49,14 @@ export class HamburgerBody extends Tonic {
         const { isopen } = this.props
 
         return (this.html`<div class="${'hamburger' + (isopen.value ? ' open' : '')}">
-            <input type="checkbox" id="checkbox" checked=${isopen.value} />
+            <input
+                type="checkbox"
+                id="tonic-burger-checkbox"
+                checked=${isopen.value}
+            />
             <label
                 class="burger"
-                for="checkbox"
+                for="tonic-burger-checkbox"
                 data-open=${true}
             >
                 <button>
