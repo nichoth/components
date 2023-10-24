@@ -4,7 +4,7 @@ import { Signal, useSignal } from '@preact/signals'
 interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
     isSpinning?: Signal<boolean>,
     className?: string,
-    onClick?: (ev:MouseEvent) => any
+    onClick?: (ev:MouseEvent) => Promise<any>
 }
 
 /**
