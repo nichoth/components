@@ -210,7 +210,7 @@ if (el) render(<App />, el)
 ```
 
 ### css
-We look for a css variable `--hamburger-color`, or by default use a black color. Define `--hamburger-color` to use a different color for the hamburger menu icon.
+We look for a css variable `--hamburger-color`, or by default use a black color. 
 
 ```css
 /* in your css file */
