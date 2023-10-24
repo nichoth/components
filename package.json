@@ -2,7 +2,7 @@
   "name": "@nichoth/components",
   "type": "module",
   "description": "A collection of UI components",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "main": "src/index.mjs",
   "directories": {
     "test": "test"
