@@ -46,7 +46,7 @@ Looks for a few css variables:
 interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
     isSpinning?: Signal<boolean>,
     className?: string,
-    onClick?: (ev:MouseEvent) => any
+    onClick?: (ev:MouseEvent) => Promise<any>
 }
 ```
 
