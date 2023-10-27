@@ -1,4 +1,4 @@
-import { Attributes, ComponentChildren, FunctionComponent, JSX } from 'preact'
+import { Attributes, ComponentChildren, FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
 import { Button } from './button.jsx'
 
@@ -22,8 +22,7 @@ type Props = {
  * }} props
  * @returns {JSX.Element}
  */
-export const ReactiveForm:FunctionComponent<Props> =
-function (props:Props):JSX.Element {
+export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
     const [isValid, setValid] = useState<boolean>(false)
     const [isResolving, setResolving] = useState<boolean>(false)
     let { buttonText, controls } = props

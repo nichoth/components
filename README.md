@@ -160,6 +160,15 @@ import { CopyIconBtn } from '@nicohoth/components/preact/copy-icon-btn'
 ```
 
 ### Editable Field
+```ts
+interface Props extends JSX.HTMLAttributes<HTMLInputElement> {
+    onSave:(value:string) => Promise<any>
+    name:string
+}
+
+const EditableField:FunctionComponent<Props> = function EditableField (props)
+```
+
 ```js
 import { EditableField } from '@nichoth/components/preact/editable-field'
 // ...
@@ -170,7 +179,17 @@ import { EditableField } from '@nichoth/components/preact/editable-field'
 />
 ```
 
-### TextInput
+### Text Input
+```ts
+interface InputProps extends JSX.HTMLAttributes<HTMLInputElement> {
+    displayName: string;
+    name: string;
+    className?: string;
+}
+
+const TextInput:FunctionComponent<InputProps> = function (props:InputProps)
+```
+
 ```js
 import { TextInput } from '@nichoth/components/preact/text-input'
 // ...
@@ -190,8 +209,21 @@ import { PencilBtn } from '@nichoth/components/preact/pencil-btn'
 ```
 
 ### RadioGroup
+```ts
+interface Props {
+    id?:string
+    name:string
+    legend:string
+    options:string[]
+    required:boolean
+}
+
+const RadioGroup:FunctionComponent<Props> = function (props)
+```
+
 ```js
 import { RadioGroup } from '@nichoth/components/preact/radio-group'
+
 <RadioGroup
     name="test-radio"
     legend="testing radio group"
@@ -201,6 +233,20 @@ import { RadioGroup } from '@nichoth/components/preact/radio-group'
 ```
 
 ### NumberInput
+```ts
+interface Props {
+    name:string;
+    min:number;
+    max:number;
+    value:Signal<number>;
+    onIncrease?:(ev:MouseEvent)=>any;
+    onDecrease?:(ev:MouseEvent)=>any;
+    onChange?:(ev:JSX.TargetedEvent)=>any;
+}
+
+const NumberInput:FunctionComponent<Props> = function NumberInput (props)
+```
+
 ```js
 import { NumberInput } from '@nichoth/components/preact/number-input'
 
@@ -223,6 +269,19 @@ const count = useSignal(3)
 ### ReactiveForm
 A `form` element that uses HTML attributes to check validity, and enables or
 disables the submit button as appropriate.
+
+```ts
+type Props = {
+    onInput?:(event:InputEvent)=>any;
+    onSubmit:(event:SubmitEvent)=>any;
+    controls?:boolean;
+    buttonText?:string;
+} & Readonly<Attributes & {
+    children?: ComponentChildren
+}>
+
+const ReactiveForm:FunctionComponent<Props> = function (props:Props)
+```
 
 ```js
 import { ReactiveForm } from '@nichoth/components/preact/reactive-form'
