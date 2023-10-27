@@ -14,7 +14,9 @@ I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, be
 The `preact` version is recommended, because some of the animations do not work well in the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work well.
 
 ### preact + htm
-Use preact with tagged template literals
+Use preact with tagged template literals.
+
+Import from `@nichoth/components/htm/*`.
 
 ```ts
 import { html } from 'htm/preact'
