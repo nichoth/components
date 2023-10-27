@@ -13,6 +13,82 @@ I recommend using this with [vite](https://www.npmjs.com/package/vite) + ESM, be
 
 The `preact` version is recommended, because some of the animations do not work well in the `tonic` version. In particular the `radio-group`, and `hamburger` components do not work well.
 
+### preact + htm
+Use preact with tagged template literals
+
+```ts
+import { html } from 'htm/preact'
+import { render, FunctionComponent } from 'preact'
+import { TextInput } from '@nichoth/components/htm/text-input.js'
+import '@nichoth/components/text-input.css'
+
+const Example:FunctionComponent<{}> = function () {
+    return html`
+        <div>
+            <h3>Text Input</h3>
+            <${TextInput}
+                displayName="htm text input"
+                required=${true}
+                minLength=${3}
+                maxLength=${7}
+                name=${'htm-text-input'}
+            ><//>
+        </div>
+    `
+}
+
+render(html`<${Example}><//>`, document.getElementById('root')!)
+```
+
+### preact + JSX
+Use preact with JSX
+
+```tsx
+import { render, FunctionComponent } from 'preact'
+import { TextInput } from '@nichoth/components/preact/text-input.js'
+import '@nichoth/components/text-input.css'
+
+const Example:FunctionComponent = function () {
+    return <div>
+        <h3>Text Input</h3>
+        <form className="example-form">
+            <TextInput name="text" displayName="Input test" />
+        </form>
+    </div>
+}
+
+render(<Example />, document.getElementById('root')!)
+```
+
+### tonic
+Use web components with [Tonic](https://tonicframework.dev/)
+
+```js
+import Tonic from '@nichoth/tonic'
+import { SpinningButton } from '@nichoth/components/tonic/spinning-button.js'
+import '@nichoth/components/text-input.css'
+
+export class TonicExample extends Tonic {
+    state = {
+        isSpinning: false,
+    }
+
+    render () {
+        return this.html`<div>
+            <spinning-button
+                isSpinning=${this.state.isSpinning}
+                data-event="click-the-button"
+            >
+                click here
+            </spinning-button>
+        </div>`
+    }
+}
+
+Tonic.add(SpinningButton)
+Tonic.add(TonicExample)
+```
+
 ## API
 
 ### Button

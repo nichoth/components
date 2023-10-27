@@ -99,15 +99,6 @@ export class TonicExample extends Tonic {
     }
 }
 
-/**
- * {
- *   name:string,
- *   legend:string,
- *   options:string[],
- *   required?:boolean
- * }
- */
-
 Tonic.add(MobileNav)
 Tonic.add(SpinningButton)
 Tonic.add(TonicExample)
