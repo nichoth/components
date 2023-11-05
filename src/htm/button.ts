@@ -1,32 +1,32 @@
 import { html } from 'htm/preact'
 import { FunctionComponent, JSX } from 'preact'
+import { Signal } from '@preact/signals'
 
 interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
-    isSpinning:boolean;
+    isSpinning:Signal<boolean>;
     onClick?:EventListener
 }
 
 const Button:FunctionComponent<Props> = function Button (props:Props) {
     const { isSpinning, ..._props } = props
-    const classes = ['btn', props.class].join(' ').trim()
-    const spinningClass = (classes + ' spinning').trim()
+    const classes = (['btn', props.class, isSpinning.value ? 'spinning' : ''])
+        .join(' ').trim()
 
-    return (isSpinning ?
-        (html`<button
-            ...${_props}
-            class=${spinningClass}
-            onClick=${props.onClick}
-            disabled=${true}
-        >
-            <span class="btn-content">${props.children}</span>
-        </button>`) :
+    async function click (ev:MouseEvent) {
+        if (props.onClick) {
+            isSpinning.value = true
+            await props.onClick(ev)
+            isSpinning.value = false
+        }
+    }
 
-        (html`<button
-            ...${_props}
-            class=${classes}
-        >
-            <span class="btn-content">${props.children}</span>
-        </button>`))
+    return html`<button
+        ...${_props}
+        onClick=${props.onClick ? click : null}
+        class=${classes}
+    >
+        <span class="btn-content">${props.children}</span>
+    </button>`
 }
 
 export { Button }

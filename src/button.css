@@ -6,8 +6,12 @@
     to {transform: rotate(360deg);}
 }
 
-.btn {
-    &button {
+.btn, .btn-link {
+    &a {
+        text-decoration: none;
+    }
+
+    &button, &a {
         position: relative;
         color: white;
         background-color: var(--button-color);
