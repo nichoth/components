@@ -169,6 +169,11 @@ const Example:FunctionComponent<{}> = function () {
                 as appropriate.
             </p>
 
+            <p>
+                Resolving state is set by returning a promise from the
+                <code>onSubmit</code> handler.
+            </p>
+
             <${ReactiveForm}
                 onSubmit=${async (ev:SubmitEvent) => {
                     ev.preventDefault()

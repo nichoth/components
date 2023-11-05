@@ -2,6 +2,7 @@ import { FunctionComponent, JSX } from 'preact'
 import { useState } from 'preact/hooks'
 import { html } from 'htm/preact'
 import { Button } from './button.js'
+import { useSignal } from '@preact/signals'
 
 interface Props extends JSX.HTMLAttributes<HTMLFormElement> {
     controls?:boolean;
@@ -19,7 +20,7 @@ interface Props extends JSX.HTMLAttributes<HTMLFormElement> {
  */
 export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
     const [isValid, setValid] = useState<boolean>(false)
-    const [isResolving, setResolving] = useState<boolean>(false)
+    const isResolving = useSignal<boolean>(false)
     let { buttonText, controls } = props
     if (controls === undefined) controls = true
 
@@ -45,10 +46,12 @@ export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
 
     async function handleSubmit (ev) {
         ev.preventDefault()
-        setResolving(true)
+        isResolving.value = true
         props.onSubmit && await props.onSubmit(ev)
-        setResolving(false)
+        isResolving.value = false
     }
+
+    console.log('render', isResolving)
 
     return (html`<form
         onInput=${handleInput}
@@ -63,7 +66,7 @@ export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
                 isSpinning=${isResolving}
                 type="submit"
                 disabled=${!isValid}
-            >${buttonText || 'Save'}</$Button>` :
+            >${buttonText || 'Save'}<//>` :
             null
         }
     </form>`)
