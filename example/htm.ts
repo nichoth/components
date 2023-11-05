@@ -15,9 +15,11 @@ import { TextInput } from '../src/htm/text-input.js'
 import { RadioGroup } from '../src/htm/radio-group.js'
 import { ReactiveForm } from '../src/htm/reactive-form.js'
 import Button from '../src/htm/button.js'
+import { ButtonLink } from '../src/htm/button-link.js'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
+    const isSpinning = useSignal(false)
     const count = useSignal(3)
 
     function hamburgler () {
@@ -42,11 +44,35 @@ const Example:FunctionComponent<{}> = function () {
 
         <div>
             <h3>Button</h3>
+
+            <p>
+                If the click event handler returns a promise, then the button
+                will spin until the promise resolves.
+            </p>
+
             <${Button}
+                isSpinning=${isSpinning}
+                onClick=${(ev) => {
+                    ev.preventDefault()
+                    return sleep(2000)
+                }}
+            >Button example<//>
+        </div>
+
+        <div>
+            <h3>Button Link</h3>
+            <p>A link that looks like a button</p>
+            <${ButtonLink} href="#">Button link<//>
         </div>
 
         <div>
             <h3>Button Outline</h3>
+
+            <p>
+                Return a promise from <code>onClick</code> to set & unset
+                resolving state.
+            </p>
+
             <${ButtonOutline}
                 onClick=${ev => {
                     ev.preventDefault()
@@ -62,6 +88,10 @@ const Example:FunctionComponent<{}> = function () {
 
         <div>
             <h3>Button Outline Primary</h3>
+            <p>
+                Return a promise from <code>onClick</code> to set & unset
+                resolving state.
+            </p>
             <${BtnOutlinePrimary}
                 onClick=${ev => {
                     ev.preventDefault()
