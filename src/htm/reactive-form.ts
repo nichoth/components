@@ -51,8 +51,6 @@ export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
         isResolving.value = false
     }
 
-    console.log('render', isResolving)
-
     return (html`<form
         onInput=${handleInput}
         onKeyDown=${onFormKeydown}
