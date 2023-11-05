@@ -14,6 +14,7 @@ import { PencilBtn } from '../src/htm/pencil-btn.js'
 import { TextInput } from '../src/htm/text-input.js'
 import { RadioGroup } from '../src/htm/radio-group.js'
 import { ReactiveForm } from '../src/htm/reactive-form.js'
+import Button from '../src/htm/button.js'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
@@ -38,6 +39,11 @@ const Example:FunctionComponent<{}> = function () {
         <//>
 
         <h2>htm/preact example</h2>
+
+        <div>
+            <h3>Button</h3>
+            <${Button}
+        </div>
 
         <div>
             <h3>Button Outline</h3>
