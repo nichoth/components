@@ -1,5 +1,6 @@
 import { html } from 'htm/preact'
 import { render, FunctionComponent } from 'preact'
+import { useState } from 'preact/hooks'
 import { useSignal } from '@preact/signals'
 import {
     ButtonOutline,
@@ -14,13 +15,17 @@ import { PencilBtn } from '../src/htm/pencil-btn.js'
 import { TextInput } from '../src/htm/text-input.js'
 import { RadioGroup } from '../src/htm/radio-group.js'
 import { ReactiveForm } from '../src/htm/reactive-form.js'
+import { Toaster } from '../src/htm/toast.js'
 import Button from '../src/htm/button.js'
 import { ButtonLink } from '../src/htm/button-link.js'
+import '../src/toast.css'
+import '../src/close-btn.css'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
     const isSpinning = useSignal(false)
     const count = useSignal(3)
+    const [toasting, setToasting] = useState(true)
 
     function hamburgler () {
         hamburgerOpen.value = !hamburgerOpen.value
@@ -29,6 +34,11 @@ const Example:FunctionComponent<{}> = function () {
     async function saver (value) {
         console.log('saving this...', value)
         await sleep(1000)
+    }
+
+    function closeToast (ev:MouseEvent) {
+        ev.preventDefault()
+        setToasting(false)
     }
 
     return html`<div>
@@ -161,6 +171,16 @@ const Example:FunctionComponent<{}> = function () {
             ><//>
         </div>
 
+        <div>
+            <h3>Toast</h3>
+            ${toasting ?
+                html`<${Toaster} type="success" onClose=${closeToast}>
+                    Successful toasting
+                <//>` :
+                null
+            }
+        </div>
+
         <div class="form-demo">
             <h3>Reactive Form</h3>
             <p>
@@ -196,12 +216,10 @@ const Example:FunctionComponent<{}> = function () {
                 ><//>
             </${ReactiveForm}>
         </div>
-
-
     </div>`
 }
 
-render(html`<${Example}><//>`, document.getElementById('root-htm')!)
+render(html`<${Example} />`, document.getElementById('root-htm')!)
 
 function sleep (ms) {
     return new Promise(resolve => {
