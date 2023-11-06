@@ -44,7 +44,7 @@
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@preact/preset-vite": "^2.5.0",
     "@socketsupply/tapzero": "^0.7.1",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.50.0",
     "esbuild": "^0.15.18",
     "eslint": "^7.18.0",

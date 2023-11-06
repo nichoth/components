@@ -188,6 +188,9 @@ const Example:FunctionComponent<{}> = function () {
             >
                 <${TextInput}
                     required=${true}
+                    minLength=${6}
+                    maxLength=${6}
+                    required=${true}
                     displayName="Some text"
                     name="text"
                 ><//>

@@ -37,8 +37,8 @@ export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
         if (_isValid !== isValid) setValid(_isValid)
     }
 
-    function handleInput (ev) {
-        const form = ev.target
+    function handleInput (ev:JSX.TargetedEvent<HTMLFormElement, InputEvent>) {
+        const { form } = ev.target as HTMLInputElement
         const isOk = (form as HTMLFormElement).checkValidity()
         if (isOk !== isValid) setValid(isOk)
         props.onInput && props.onInput(ev)

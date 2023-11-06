@@ -185,6 +185,8 @@ const Example:FunctionComponent<{}> = function () {
                 >
                     <TextInput
                         required={true}
+                        minLength={6}
+                        maxLength={6}
                         displayName="text input"
                         name="text"
                     />
