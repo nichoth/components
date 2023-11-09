@@ -75,7 +75,7 @@
     "preact"
   ],
   "author": "nichoth <nichoth@gmail.com> (http://nichoth.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nichoth/components/issues"
   },
