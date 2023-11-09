@@ -8,11 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "start": "vite",
-    "start-esm": "",
+    "start": "cp src/wave.svg example && vite",
     "lint": "standardx src/**/*.{ts,tsx} -v",
     "build-cjs": "esbuild src/*.ts --format=cjs --tsconfig=tsconfig.build.json --keep-names --outdir=./dist --out-extension:.js=.cjs",
-    "build": "mkdir -p dist && rm -rf ./dist/* && npm run build-preact && npm run build-htm && npm run build-tonic && npm run build-css",
+    "build": "mkdir -p dist && rm -rf ./dist/* && npm run build-preact && npm run build-htm && npm run build-tonic && npm run build-css && cp src/wave.svg dist",
     "build-example": "mkdir -p ./public && rm -rf ./public/* && vite build --base=./",
     "build-preact": "esbuild src/preact/*.tsx --keep-names --outdir=dist/preact --out-extension:.js=.jsx --sourcemap --tsconfig=tsconfig.build.json",
     "build-htm": "esbuild src/htm/*.ts --keep-names --outdir=dist/htm --sourcemap --tsconfig=tsconfig.build.json",

@@ -29,6 +29,7 @@ import '../src/mobile-nav-menu.css'
 import '../src/radio-group.css'
 import '../src/number-input.css'
 import '../src/button-outline.css'
+import '../src/hr.css'
 
 const Example:FunctionComponent<{}> = function () {
     const [resolving, setResolving] = useState<boolean>(false)

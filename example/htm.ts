@@ -9,6 +9,7 @@ import {
 import { EditableField } from '../src/htm/editable-field.js'
 import { CopyBtn } from '../src/htm/copy-btn.js'
 import { HamburgerWrapper } from '../src/htm/hamburger.js'
+import { WavyHr } from '../src/htm/hr.js'
 import { MobileNav } from '../src/htm/mobile-nav-menu.js'
 import { NumberInput } from '../src/htm/number-input.js'
 import { PencilBtn } from '../src/htm/pencil-btn.js'
@@ -113,6 +114,11 @@ const Example:FunctionComponent<{}> = function () {
             >
                 example
             <//>
+        </div>
+
+        <div>
+                <h3>Wavy Hr</h3>
+                <${WavyHr} />
         </div>
 
         <div>
