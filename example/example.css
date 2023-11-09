@@ -2,6 +2,10 @@ body {
     font-family: sans-serif;
 }
 
+.backlink {
+    margin-bottom: 2rem;
+}
+
 h2 {
     margin-top: 0;
 
