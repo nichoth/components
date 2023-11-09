@@ -7,6 +7,7 @@ import { MobileNav } from '../src/tonic/mobile-nav-menu.js'
 import { NumberInput } from '../src/tonic/number-input.js'
 import { PencilBtn } from '../src/tonic/pencil-btn.js'
 import { RadioGroup } from '../src/tonic/radio-group.js'
+import { WavyHr } from '../src/tonic/wavy-hr.js'
 
 export class TonicExample extends Tonic {
     state = {
@@ -51,6 +52,11 @@ export class TonicExample extends Tonic {
             >
                 click here
             </spinning-button>
+
+            <div>
+                <h3>Wavy Hr</h3>
+                <wavy-hr />
+            </div>
 
             <div>
                 <h3>Copy Button</h3>
@@ -109,6 +115,7 @@ Tonic.add(HamburgerBody)
 Tonic.add(NumberInput)
 Tonic.add(PencilBtn)
 Tonic.add(RadioGroup)
+Tonic.add(WavyHr)
 
 function sleep (ms) {
     return new Promise(resolve => {

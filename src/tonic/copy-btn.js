@@ -25,13 +25,14 @@ export class CopyIconBtn extends Tonic {
 
     click (ev) {
         ev.preventDefault()
+        ev.stopPropagation()
         clipboardCopy(this.props.payload)
         this.state.hasCopied = true
         this.reRender()
     }
 
     render () {
-        const { payload, ..._props } = this.props
+        const { ..._props } = this.props
         return this.html`<button
             ...${_props}
             class="${('copy-icon-btn ' +

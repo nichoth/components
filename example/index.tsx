@@ -13,7 +13,8 @@ import {
     NumberInput,
     ReactiveForm,
     ButtonOutline,
-    ButtonOutlinePrimary
+    ButtonOutlinePrimary,
+    WavyHr
 } from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
@@ -70,6 +71,11 @@ const Example:FunctionComponent<{}> = function () {
             >
                 example
             </Button>
+
+            <div>
+                <h3>Wavy Hr</h3>
+                <WavyHr />
+            </div>
 
             <div>
                 <h3>Button Outline</h3>

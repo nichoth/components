@@ -13,3 +13,4 @@ export {
     ButtonOutline,
     Primary as ButtonOutlinePrimary
 } from './button-outline.jsx'
+export { WavyHr } from './hr.jsx'
