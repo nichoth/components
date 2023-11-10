@@ -146,6 +146,8 @@ const Example:FunctionComponent<{}> = function () {
             <h3>Text Input</h3>
             <${TextInput}
                 displayName="htm text input"
+                title="At least 3 letters, but less than 7"
+                data-title="I bla bla"
                 required=${true}
                 minLength=${3}
                 maxLength=${7}

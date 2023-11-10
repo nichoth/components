@@ -186,6 +186,16 @@ import { EditableField } from '@nichoth/components/preact/editable-field'
 ```
 
 ### Text Input
+This looks for 2 css variables:
+```css
+:root {
+    --text-input-error-border: red;
+    --text-input-error-text: red;
+}
+```
+
+Pass in an attribute `title`; this determines the invalid hint text that is shown below the input.
+
 ```ts
 interface InputProps extends JSX.HTMLAttributes<HTMLInputElement> {
     displayName: string;
@@ -196,12 +206,22 @@ interface InputProps extends JSX.HTMLAttributes<HTMLInputElement> {
 const TextInput:FunctionComponent<InputProps> = function (props:InputProps)
 ```
 
+#### example
 ```js
 import { TextInput } from '@nichoth/components/preact/text-input'
 // ...
-<form className="example-form">
-    <TextInput name="text" displayName="Input test" />
-</form>
+function MyElement () {
+    return html`<form className="example-form">
+        <${TextInput}
+            displayName="htm text input"
+            title="At least 3 characters, but less than 7"
+            required=${true}
+            minLength=${3}
+            maxLength=${7}
+            name=${'htm-text-input-example'}
+        ><//>
+    </form>`
+}
 ```
 
 ### PencilBtn
