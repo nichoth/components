@@ -65,6 +65,7 @@ const Example:FunctionComponent<{}> = function () {
                 isSpinning=${isSpinning}
                 onClick=${(ev) => {
                     ev.preventDefault()
+                    console.log('click')
                     return sleep(2000)
                 }}
             >Button example<//>

@@ -22,7 +22,8 @@ const Button:FunctionComponent<Props> = function Button (props:Props) {
 
     return html`<button
         ...${_props}
-        onClick=${props.onClick ? click : null}
+        onClick=${click}
+        disabled=${isSpinning.value || _props.disabled}
         class=${classes}
     >
         <span class="btn-content">${props.children}</span>
