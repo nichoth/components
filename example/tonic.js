@@ -8,6 +8,8 @@ import { NumberInput } from '../src/tonic/number-input.js'
 import { PencilBtn } from '../src/tonic/pencil-btn.js'
 import { RadioGroup } from '../src/tonic/radio-group.js'
 import { WavyHr } from '../src/tonic/wavy-hr.js'
+import { AccordionElement } from '../src/tonic/accordion.js'
+import { PlusIcon } from '../src/tonic/plus-icon.js'
 
 export class TonicExample extends Tonic {
     state = {
@@ -56,6 +58,14 @@ export class TonicExample extends Tonic {
             <div>
                 <h3>Wavy Hr</h3>
                 <wavy-hr />
+            </div>
+
+            <div>
+                <h3>Accordion Element</h3>
+                <accordion-element>
+                    <summary>Trying accordion example</summary>
+                    <p>This is the nested paragraph element in the accordion demo</p>
+                </accordion-element>
             </div>
 
             <div>
@@ -116,6 +126,8 @@ Tonic.add(NumberInput)
 Tonic.add(PencilBtn)
 Tonic.add(RadioGroup)
 Tonic.add(WavyHr)
+Tonic.add(AccordionElement)
+Tonic.add(PlusIcon)
 
 function sleep (ms) {
     return new Promise(resolve => {
