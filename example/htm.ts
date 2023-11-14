@@ -17,10 +17,12 @@ import { TextInput } from '../src/htm/text-input.js'
 import { RadioGroup } from '../src/htm/radio-group.js'
 import { ReactiveForm } from '../src/htm/reactive-form.js'
 import { Toaster } from '../src/htm/toast.js'
+import { Accordion } from '../src/htm/accordion.js'
 import Button from '../src/htm/button.js'
 import { ButtonLink } from '../src/htm/button-link.js'
 import '../src/toast.css'
 import '../src/close-btn.css'
+import '../src/accordion.css'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
@@ -42,6 +44,8 @@ const Example:FunctionComponent<{}> = function () {
         setToasting(false)
     }
 
+    // const arrayChildren = Children.toArray(children);
+
     return html`<div>
         <${HamburgerWrapper} isOpen=${hamburgerOpen} onClick=${hamburgler}><//>
 
@@ -54,6 +58,17 @@ const Example:FunctionComponent<{}> = function () {
         <h2>htm/preact example</h2>
 
         <div>
+            <h3>Accordion</h3>
+            <p>
+                Use the <code>Accordion</code> component with nested <code>
+                summary</code> and <code>p</code> elements.
+            </p>
+
+            <${Accordion}>
+                <summary>Trying accordion example</summary>
+                <p>This is the nested paragraph element in the accordion demo</p>
+            <//>
+
             <h3>Button</h3>
 
             <p>

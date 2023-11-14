@@ -1,0 +1,31 @@
+:root {
+    --transition-time: 0.2s;
+}
+
+details {
+    border-bottom: 2px solid;
+    padding-block-end: 1rem;
+
+    &[open] {
+        & svg {
+            rotate: 45deg;
+        }
+    }
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    & svg {
+        transition: rotate var(--transition-time) ease-in-out;
+        margin-inline: 0;
+    }
+
+    /* for svg */
+    & fill {
+        color: black;
+    }
+}

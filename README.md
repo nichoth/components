@@ -95,7 +95,54 @@ Tonic.add(SpinningButton)
 Tonic.add(TonicExample)
 ```
 
+## globals
+We use these CSS variables
+
+```css
+:root {
+    --transition-time: 0.2s;
+    --button-outine-color: black;
+    --button-primary-outline: #0077ff;
+    --button-outine-primary-bg-hover: rgb(0 255 255 / 28%);
+    --button-outline-disabled-ol: #0077ff5c;
+    --text-input-error-border: red;
+    --text-input-error-text: red;
+    --hamburger-color: #FAFAFA;
+}
+```
+
 ## API
+
+### Accordion
+Available in preact/htm only.
+
+#### CSS
+It is affected by the `--transition-time` CSS variable
+```css
+:root {
+    --transition-time: 0.2s;
+}
+```
+
+#### example
+```js
+import { html } from 'htm/preact'
+import { Accordion } from '@nichoth/components/htm/accordion.js'
+import '@nichoth/components/accordion.css'
+
+function Example () {
+    return html`<${Accordion}>
+        <summary>Trying accordion example</summary>
+        <p>This is the nested paragraph element in the accordion demo</p>
+    <//>`
+}
+```
+
+Results in html like this
+
+![Screenshot of accordion closed](image.png)
+
+![Screenshot of accordion open](image-1.png)
 
 ### Button
 ```js
