@@ -114,10 +114,11 @@ We use these CSS variables
 ## API
 
 ### Accordion
-Available in preact/htm only.
+Available in `preact/htm` only.
 
-#### CSS
+#### Accordion CSS
 It is affected by the `--transition-time` CSS variable
+
 ```css
 :root {
     --transition-time: 0.2s;
