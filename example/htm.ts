@@ -214,10 +214,16 @@ const Example:FunctionComponent<{}> = function () {
                 as appropriate.
             </p>
 
-            <p>
-                Resolving state is set by returning a promise from the
-                <code>onSubmit</code> handler.
-            </p>
+            <ul>
+                <li>
+                    Resolving state is set by returning a promise from the
+                    <code> onSubmit</code> handler.
+                </li>
+                <li>
+                    Use a <code>title</code> attribute to provide an error message
+                    below the input when you focus away.
+                </li>
+            </ul>
 
             <${ReactiveForm}
                 onSubmit=${async (ev:SubmitEvent) => {
@@ -231,7 +237,11 @@ const Example:FunctionComponent<{}> = function () {
                     console.log('resolved...', text.value)
                 }}
             >
+                <div>
+                    Length must equal 6
+                </div>
                 <${TextInput}
+                    title="Length must equal 6"
                     required=${true}
                     minLength=${6}
                     maxLength=${6}
