@@ -57,7 +57,7 @@ const Example:FunctionComponent<{}> = function () {
 
         <h2>htm/preact example</h2>
 
-        <div>
+        <div id="accordion">
             <h3>Accordion</h3>
             <p>
                 Use the <code>Accordion</code> component with nested <code>
@@ -206,7 +206,7 @@ const Example:FunctionComponent<{}> = function () {
             }
         </div>
 
-        <div class="form-demo">
+        <div class="form-demo" id="reactive-form">
             <h3>Reactive Form</h3>
             <p>
                 A <code>form</code> element that uses HTML attributes to
