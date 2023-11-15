@@ -1,6 +1,7 @@
 # components
 ![module](https://img.shields.io/badge/module-ESM-blue)
 ![types](https://img.shields.io/npm/types/@nichoth/components)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/@nichoth/components)](https://socket.dev/npm/package/@nichoth/components)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen)
 
 A collection of UI components made with [preact](https://www.npmjs.com/package/preact) and [tonic](https://tonicframework.dev/).
