@@ -119,6 +119,7 @@ const Example:FunctionComponent<{}> = function () {
                 Return a promise from <code>onClick</code> to set & unset
                 resolving state.
             </p>
+
             <${BtnOutlinePrimary}
                 onClick=${ev => {
                     ev.preventDefault()

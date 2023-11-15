@@ -5,14 +5,12 @@ import Tonic from '@nichoth/tonic'
  */
 export class AccordionElement extends Tonic {
     render () {
-        console.log('child', child)
-        console.log('child text', child.textContent)
-        return (i === 0 ?
-            html`<summary>
+        return this.html`<details>
+            <summary>
                 <plus-icon></plus-icon>
-                ${child.textContent}
-            </summary>` :
-            child)
+                ${this.children[0].textContent}
+            </summary>
+        </details>`
     }
 }
 
