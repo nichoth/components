@@ -26,7 +26,7 @@ Import from `@nichoth/components/htm/*`.
 ```ts
 import { html } from 'htm/preact'
 import { render, FunctionComponent } from 'preact'
-import { TextInput } from '@nichoth/components/htm/text-input.js'
+import { TextInput } from '@nichoth/components/htm/text-input'
 import '@nichoth/components/text-input.css'
 
 const Example:FunctionComponent<{}> = function () {
@@ -52,7 +52,7 @@ Use preact with JSX
 
 ```tsx
 import { render, FunctionComponent } from 'preact'
-import { TextInput } from '@nichoth/components/preact/text-input.js'
+import { TextInput } from '@nichoth/components/preact/text-input'
 import '@nichoth/components/text-input.css'
 
 const Example:FunctionComponent = function () {
@@ -72,7 +72,7 @@ Use web components with [Tonic](https://tonicframework.dev/)
 
 ```js
 import Tonic from '@nichoth/tonic'
-import { SpinningButton } from '@nichoth/components/tonic/spinning-button.js'
+import { SpinningButton } from '@nichoth/components/tonic/spinning-button'
 import '@nichoth/components/text-input.css'
 
 export class TonicExample extends Tonic {
@@ -129,7 +129,7 @@ It is affected by the `--transition-time` CSS variable
 #### example
 ```js
 import { html } from 'htm/preact'
-import { Accordion } from '@nichoth/components/htm/accordion.js'
+import { Accordion } from '@nichoth/components/htm/accordion'
 import '@nichoth/components/accordion.css'
 
 function Example () {
@@ -182,7 +182,7 @@ interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
 ```
 
 ```js
-import { ButtonOutine } from '@nichoth/components/preact/button-outline.jsx'
+import { ButtonOutine } from '@nichoth/components/preact/button-outline'
 
 <ButtonOutline
     onClick={ev => {
