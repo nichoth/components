@@ -142,8 +142,10 @@ function Example () {
 
 Results in html like this
 
-![Screenshot of accordion closed](image.png)
+__closed:__
+![Screenshot of accordion closed](image-2.png)
 
+__open:__
 ![Screenshot of accordion open](image-1.png)
 
 ### Button
