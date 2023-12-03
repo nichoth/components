@@ -59,12 +59,12 @@
     "vite": "^5.0.4"
   },
   "files": [
-    "./dist/*",
+    "./dist",
     "LICENSE"
   ],
   "standardx": {
     "ignore": [
-      "dist/*"
+      "dist/**/*"
     ]
   },
   "repository": {
