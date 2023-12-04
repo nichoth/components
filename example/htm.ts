@@ -66,7 +66,17 @@ const Example:FunctionComponent<{}> = function () {
 
             <${Accordion}>
                 <summary>Trying accordion example</summary>
-                <p>This is the nested paragraph element in the accordion demo</p>
+                <div>
+                    <p>
+                        This is the nested paragraph element in the accordion demo
+                    </p>
+                    <p>some more writing</p>
+                    <p>some more writing</p>
+                    <p>some more writing</p>
+                    <p>some more writing</p>
+                    <p>some more writing</p>
+                    <p>some more writing</p>
+                </div>
             <//>
 
             <h3>Button</h3>

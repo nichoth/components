@@ -13,7 +13,7 @@ export const Accordion:FunctionComponent<
 > = function (props) {
     const children = toChildArray(props.children)
 
-    // add an `img` tag into the `summary` element (the first child tag)
+    // add an `svg` tag into the `summary` element (the first child tag)
     return html`<details>
         ${children.map((child, i) => {
             return (i === 0 ?

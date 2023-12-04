@@ -5,8 +5,15 @@
 details {
     border-bottom: 2px solid;
     padding-block-end: 1rem;
+    transition: max-height 400ms ease-in-out;
+
+    /* Set a max-height value just enough to show the summary content */
+    max-height: 4rem; 
+    overflow: hidden; /* Hide the rest of the content */
 
     &[open] {
+        max-height: 800px;
+
         & svg {
             rotate: 45deg;
         }
