@@ -1,11 +1,12 @@
 :root {
-    --transition-time: 0.2s;
+    --accordion-transition-time: 0.4s;
+    --x-transition-time: 0.2s;
 }
 
 details {
     border-bottom: 2px solid;
     padding-block-end: 1rem;
-    transition: max-height 400ms ease-in-out;
+    transition: max-height var(--accordion-transition-time, 0.4s) ease-in-out;
 
     /* Set a max-height value just enough to show the summary content */
     max-height: 4rem; 
@@ -27,7 +28,7 @@ summary {
     cursor: pointer;
 
     & svg {
-        transition: rotate var(--transition-time) ease-in-out;
+        transition: rotate var(--x-transition-time, 0.2s) ease-in-out;
         margin-inline: 0;
     }
 
