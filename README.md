@@ -141,7 +141,7 @@ function Example () {
 }
 ```
 
-Results in html like this
+Results in UI like this:
 
 __closed:__
 ![Screenshot of accordion closed](image-2.png)
