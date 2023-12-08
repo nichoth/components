@@ -1,0 +1,11 @@
+:root {
+    --transition-time: 0.2s;
+    --button-outine-color: black;
+    --button-primary-outline: #0077ff;
+    --button-outine-primary-bg-hover: rgb(0 255 255 / 28%);
+    --button-outline-disabled-ol: #0077ff5c;
+    --text-input-error-border: red;
+    --text-input-error-text: red;
+    /* --hamburger-color: #FAFAFA; */
+    --hamburger-color: black;
+}

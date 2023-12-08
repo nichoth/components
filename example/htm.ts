@@ -20,9 +20,12 @@ import { Toaster } from '../src/htm/toast.js'
 import { Accordion } from '../src/htm/accordion.js'
 import Button from '../src/htm/button.js'
 import { ButtonLink } from '../src/htm/button-link.js'
+import { Switch } from '../src/htm/switch.js'
+import '../src/variables.css'
 import '../src/toast.css'
 import '../src/close-btn.css'
 import '../src/accordion.css'
+import '../src/switch.css'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
@@ -56,6 +59,22 @@ const Example:FunctionComponent<{}> = function () {
         <//>
 
         <h2>htm/preact example</h2>
+
+        <div id="switch">
+            <h3>switch</h3>
+            <p>Switch example</p>
+            
+            <form
+                onSubmit=${ev => {
+                    ev.preventDefault()
+                    const el = ev.target.elements['test-switch']
+                    console.log('el.checked', el.checked)
+                }}>
+                    <${Switch} name="test-switch" />
+
+                    <button type="submit">submit</button>
+            </form>
+        </div>
 
         <div id="accordion">
             <h3>Accordion</h3>

@@ -432,3 +432,6 @@ We look for a css variable `--hamburger-color`, or by default use a black color.
 }
 ```
 
+### see also
+
+* [You don't need JavaScript for that](https://www.htmhell.dev/adventcalendar/2023/2/)
