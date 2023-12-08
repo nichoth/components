@@ -114,6 +114,45 @@ We use these CSS variables
 
 ## API
 
+### css
+Import the css variables in addition to the per-component css.
+
+With Vite as bundler:
+```js
+import '../src/variables.css'
+```
+
+### Switch
+See [./src/htm/switch](./src/htm/switch.ts)
+
+#### css
+Affected by the transition variable.
+```css
+:root {
+    --transition-time: 0.2s;
+}
+```
+
+#### example
+```js
+import { html } from 'htm/preact'
+import { Switch } from '@nichoth/components/htm/switch'
+import '@nichoth/components/switch.css'
+
+function Example () {
+    return html`<div id="switch">
+        <form
+            onSubmit=${ev => {
+                ev.preventDefault()
+                const el = ev.target.elements['test-switch']
+                console.log('el.checked', el.checked)
+            }}>
+                <${Switch} name="test-switch" />
+                <button type="submit">submit</button>
+        </form>
+    </div>`
+```
+
 ### Accordion
 Available in `preact/htm` only.
 
