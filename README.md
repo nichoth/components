@@ -108,7 +108,7 @@ We use these CSS variables
     --button-outline-disabled-ol: #0077ff5c;
     --text-input-error-border: red;
     --text-input-error-text: red;
-    --hamburger-color: #FAFAFA;
+    --hamburger-color: black;
 }
 ```
 
