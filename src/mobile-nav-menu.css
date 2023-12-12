@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
-    animation: fadeIn 0.2s;
+    animation: fadeIn var(--fade-in-time);
 
     & ul {
         list-style: none;

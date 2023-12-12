@@ -8,4 +8,5 @@
     --text-input-error-text: red;
     /* --hamburger-color: #FAFAFA; */
     --hamburger-color: black;
+    --fade-in-time: 0.2s;
 }
