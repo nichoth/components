@@ -109,8 +109,11 @@ We use these CSS variables
     --text-input-error-border: red;
     --text-input-error-text: red;
     --hamburger-color: black;
+    --fade-in-time: 0.2s;  /* for the mobile nav fade-in animation */
 }
 ```
+
+Define them in your application to customize.
 
 ## API
 
@@ -119,7 +122,7 @@ Import the css variables in addition to the per-component css.
 
 With Vite as bundler:
 ```js
-import '../src/variables.css'
+import '@nichoth/components/variables.css'
 ```
 
 ### Switch
@@ -431,6 +434,7 @@ import { useSignal } from '@preact/signals'
 import HamburgerWrapper from '@nichoth/components/preact/hamburger'
 import MobileNav from '@nichoth/components/preact/mobile-nav-menu'
 import { CopyBtn, CopyIconBtn } from '@nichoth/components/preact/copy-btn'
+import '@nichoth/components/variables.css'
 import '@nichoth/components/copy-btn.css'
 import '@nichoth/components/hamburger.css'
 import '@nichoth/components/mobile-nav-menu.css'
