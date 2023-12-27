@@ -226,10 +226,13 @@ interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
 }
 ```
 
+#### example
+
 ```js
 import { ButtonOutine } from '@nichoth/components/preact/button-outline'
 
 <ButtonOutline
+    type="submit"
     onClick={ev => {
         ev.preventDefault()
         console.log('click')
