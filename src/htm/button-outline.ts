@@ -1,12 +1,6 @@
 import { html } from 'htm/preact'
-import { FunctionComponent, JSX } from 'preact'
+import { FunctionComponent } from 'preact'
 import { Signal, useSignal } from '@preact/signals'
-
-interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
-    isSpinning?: Signal<boolean>,
-    class?: string,
-    onClick?: (ev:MouseEvent) => Promise<any>
-}
 
 /**
  * Create a button element
@@ -15,7 +9,12 @@ interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
  * and this will spin until the promise resolves.
  * @returns {JSX.Element}
  */
-export const ButtonOutline:FunctionComponent<ButtonProps> = function (props) {
+export const ButtonOutline:FunctionComponent<{
+    isSpinning?: Signal<boolean>;
+    type?: 'submit' | 'reset' | 'button';
+    class?: string;
+    onClick?: (ev:MouseEvent) => Promise<any>;
+}> = function (props) {
     const { ..._props } = props
     let { isSpinning } = props
 
@@ -45,7 +44,12 @@ export const ButtonOutline:FunctionComponent<ButtonProps> = function (props) {
     </button>`)
 }
 
-export const Primary:FunctionComponent<ButtonProps> = function (props) {
+export const Primary:FunctionComponent<{
+    isSpinning?: Signal<boolean>;
+    type?: 'submit' | 'reset' | 'button';
+    class?: string;
+    onClick?: (ev:MouseEvent) => Promise<any>;
+}> = function (props) {
     const { ..._props } = props
     let { isSpinning } = props
     if (!isSpinning) isSpinning = useSignal(false)
