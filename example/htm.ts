@@ -15,6 +15,7 @@ import { NumberInput } from '../src/htm/number-input.js'
 import { PencilBtn } from '../src/htm/pencil-btn.js'
 import { TextInput } from '../src/htm/text-input.js'
 import { RadioGroup } from '../src/htm/radio-group.js'
+import { Checkbox } from '../src/htm/checkbox.js'
 import { ReactiveForm } from '../src/htm/reactive-form.js'
 import { Toaster } from '../src/htm/toast.js'
 import { Accordion } from '../src/htm/accordion.js'
@@ -27,6 +28,7 @@ import '../src/toast.css'
 import '../src/close-btn.css'
 import '../src/accordion.css'
 import '../src/switch.css'
+import '../src/checkbox.css'
 
 const Example:FunctionComponent<{}> = function () {
     const hamburgerOpen = useSignal(false)
@@ -218,12 +220,30 @@ const Example:FunctionComponent<{}> = function () {
         </div>
 
         <div>
+            <h3>Radio Group</h3>
             <${RadioGroup}
                 name="htm-test-radio"
                 legend="testing htm radio group"
                 options=${['aaa', 'bbb', 'ccc']}
                 required=${true}
             ><//>
+        </div>
+
+        <div>
+            <h3>Checkbox</h3>
+            <form onSubmit=${ev => {
+                ev.preventDefault()
+                const testbox = ev.target.elements.testbox
+                console.log(ev.target.value)
+                console.log('testbox value', testbox.checked)
+            }}>
+                <fieldset>
+                    <legend>checkbox demo</legend>
+                    <${Checkbox} name="testbox">Testing checkbox<//>
+                </fieldset>
+
+                <button type="submit">submit</button>
+            </form>
         </div>
 
         <div>

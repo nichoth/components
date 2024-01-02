@@ -1,0 +1,60 @@
+label.checkbox {
+    --color-primary: #2646cc; 
+    --color-primary-light: rgb(7.82 0 234.47 / 13%);
+    --colorNeutral600: #7d8699;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    cursor: pointer;
+
+    & .box-container {
+        border: 2px solid var(--colorNeutral600);
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        tab-size: 4;
+        -webkit-tap-highlight-color: transparent;
+        transition: border-color 0.2s ease-in-out;
+        align-items: center;
+        display: inline-grid;
+        justify-items: center;
+        fill: none;
+
+        &:focus-within {
+            border-color: var(--color-primary);
+            outline-color: var(--color-primary-light);
+            outline-offset: 0;
+            outline-style: solid;
+            outline-width: 4px;
+        }
+
+        &.checked {
+            fill: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        & svg {
+            /* overflow: hidden; */
+            margin-left: calc(-1 * 2px);
+            margin-top: calc(-1 * 2px);
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+}
+
+input.checkbox {
+    cursor: pointer;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    touch-action: manipulation;
+    height: 24px;
+    width: 24px;
+    opacity: 0;
+    cursor: pointer;
+    margin-left: calc(-1 * 2px);
+    margin-top: calc(-1 * 2px);
+}

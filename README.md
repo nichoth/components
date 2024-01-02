@@ -156,6 +156,51 @@ function Example () {
     </div>`
 ```
 
+### checkbox
+See [./src/htm/checkbox.ts](./src/htm/checkbox.ts)
+
+Pass in the checkbox label as child text.
+
+```js
+import { Checkbox } from '@nichoth/components/htm/checkbox'
+import '@nichoth/components/checkbox.css'
+```
+
+#### example
+```js
+import { html } from 'htm/preact'
+import { Checkbox } from '@nichoth/components/htm/checkbox'
+import '@nichoth/components/checkbox.css'
+
+function Example () {
+    // note we pass in the checkbox label text as a child
+    return html`<form onSubmit=${ev => {
+        ev.preventDefault()
+        const testbox = ev.target.elements.testbox
+        console.log('testbox value', testbox.checked)
+    }}>
+        <fieldset>
+            <legend>checkbox demo</legend>
+            <${Checkbox} name="testbox">Testing checkbox<//>
+        </fieldset>
+
+        <button type="submit">submit</button>
+    </form>`
+}
+```
+
+#### css
+CSS selectors:
+
+```css
+label.checkbox
+```
+and
+```css
+input.checkbox
+```
+
+
 ### Accordion
 Available in `preact/htm` only.
 

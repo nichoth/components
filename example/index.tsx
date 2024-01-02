@@ -18,6 +18,7 @@ import {
 } from '../src/preact/index.js'
 import { HamburgerWrapper } from '../src/preact/hamburger.jsx'
 import MobileNav from '../src/preact/mobile-nav-menu.jsx'
+import '../src/variables.css'
 import '../src/z-index.css'
 import '../src/button.css'
 import './example.css'
