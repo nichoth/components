@@ -3,6 +3,7 @@ label.checkbox {
     --color-primary-light: rgb(7.82 0 234.47 / 13%);
     --colorNeutral600: #7d8699;
 
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -37,9 +38,9 @@ label.checkbox {
         }
 
         & svg {
-            /* overflow: hidden; */
-            margin-left: calc(-1 * 2px);
-            margin-top: calc(-1 * 2px);
+            overflow: hidden;
+            margin-left: calc(-1 * 1px);
+            margin-top: calc(-1 * 1px);
             grid-column: 1/2;
             grid-row: 1/2;
         }

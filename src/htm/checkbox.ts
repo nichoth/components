@@ -4,11 +4,9 @@ import { Signal, useSignal } from '@preact/signals'
 
 type HTMLCheckbox = Omit<HTMLInputElement, 'type'>
 
-interface Props extends JSX.HTMLAttributes<HTMLCheckbox> {
+export const Checkbox:FunctionComponent<{
     checkedState?:Signal<boolean>;
-}
-
-export const Checkbox:FunctionComponent<Props> = function (props:Props) {
+} & JSX.HTMLAttributes<HTMLCheckbox>> = function (props) {
     let { checkedState, ..._props } = props
     if (!checkedState) checkedState = useSignal<boolean>(false)
     const classes = (['checkbox', props.class])
@@ -16,7 +14,6 @@ export const Checkbox:FunctionComponent<Props> = function (props:Props) {
 
     function onChange (ev) {
         const isChecked = ev.target.checked
-        console.log('is checked', isChecked)
         if (checkedState!.value !== isChecked) checkedState!.value = isChecked
         props.onChange && props.onChange(ev)
     }
@@ -32,6 +29,7 @@ export const Checkbox:FunctionComponent<Props> = function (props:Props) {
             <${Svg} />
             <input
                 ...${_props}
+                checked=${checkedState}
                 onChange=${onChange}
                 class=${classes}
                 type="checkbox"

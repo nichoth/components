@@ -161,9 +161,12 @@ See [./src/htm/checkbox.ts](./src/htm/checkbox.ts)
 
 Pass in the checkbox label as child text.
 
+Optionally Pass in a signal as the checked value, to use as a controled input. Or do not pass in a `checkedState`
+
 ```js
-import { Checkbox } from '@nichoth/components/htm/checkbox'
-import '@nichoth/components/checkbox.css'
+const Checkbox:FunctionComponent<{
+    checkedState?:Signal<boolean>;
+} & JSX.HTMLAttributes<HTMLCheckbox>> = function (props)
 ```
 
 #### example
@@ -181,6 +184,7 @@ function Example () {
     }}>
         <fieldset>
             <legend>checkbox demo</legend>
+            ${/* Can pass in `checkedState` here */}
             <${Checkbox} name="testbox">Testing checkbox<//>
         </fieldset>
 
