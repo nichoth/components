@@ -45,7 +45,7 @@
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@nichoth/tapzero": "^0.8.4",
     "@preact/preset-vite": "^2.7.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^5.50.0",
     "anchor-js": "^5.0.0",
     "auto-changelog": "^2.4.0",
