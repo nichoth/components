@@ -40,12 +40,6 @@ h3 {
     }
 }
 
-#root-htm {
-    & fieldset {
-        margin-top: 6rem;
-    }
-}
-
 #root-preact {
     & .form-demo {
         margin-top: 6rem;
