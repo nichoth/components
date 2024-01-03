@@ -161,7 +161,7 @@ See [./src/htm/checkbox.ts](./src/htm/checkbox.ts)
 
 Pass in the checkbox label as child text.
 
-Optionally Pass in a signal as the checked value, to use as a controled input. Or do not pass in a `checkedState`
+Optionally Pass in a signal as the checked value, to use as a controled input. Or do not pass in a `checkedState` for a non-controlled input.
 
 ```js
 const Checkbox:FunctionComponent<{
