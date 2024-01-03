@@ -3,10 +3,12 @@ import { FunctionComponent } from 'preact'
 import { CloseBtn } from './close-btn.js'
 import { GreenCheck } from './green-check.js'
 
+/* eslint-disable */
 export enum ToastType {
     success = 'success',
     error= 'error'
 }
+/* eslint-enable */
 
 interface Props {
     onClose: (MouseEvent) => void
