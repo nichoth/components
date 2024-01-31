@@ -6,6 +6,7 @@ interface Props {
     name:string;
     min:number;
     max:number;
+    class?:string;
     value:Signal<number>;
     onIncrease?:(ev:MouseEvent)=>any;
     onDecrease?:(ev:MouseEvent)=>any;
@@ -14,8 +15,12 @@ interface Props {
 
 export const NumberInput:FunctionComponent<Props> = function NumberInput (props) {
     const { name, min, max, onChange, value, onIncrease, onDecrease } = props
+    const className = (props.class || '')
+        .split(' ')
+        .concat(['input-group-number'])
+        .join(' ')
 
-    return (html`<div class="input-group-number">
+    return (html`<div class="${className}">
         <input type="number" inputMode="numeric"
             pattern="[0-9]*"
             max=${max}
