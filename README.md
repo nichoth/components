@@ -294,6 +294,40 @@ import { ButtonOutine } from '@nichoth/components/preact/button-outline'
 </ButtonOutline>
 ```
 
+### ButtonLink
+A link that looks like a button. Use with `htm`.
+
+```js
+import { html } from 'htm/preact'
+import { FunctionComponent } from 'preact'
+
+/**
+ * A link that looks like a button
+ *
+ * @param {HTMLAttributes<HTMLAnchorElement>} props
+ * @returns {FunctionComponent}
+ */
+const ButtonLink:FunctionComponent<
+    HTMLAttributes<HTMLAnchorElement>
+> = function (props) {
+    const className = [props.class, 'btn-link'].join(' ').trim()
+    return html`<a href=${props.href} class=${className}>${props.children}</a>`
+}
+```
+
+#### ButtonLink example
+```js
+import { html } from 'htm/preact'
+import { ButtonLink } from '@nichoth/components/htm/button-link'
+import '@nichoth/components/button.css'
+
+// ...
+
+return html`<div>
+    <ButtonLink href="#" class="my-button">button text</ButtonLink>
+</div>`
+```
+
 ### CopyBtn
 ```jsx
 import { CopyBtn } from '@nichoth/components/preact/copy-btn'
