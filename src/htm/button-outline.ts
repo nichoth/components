@@ -50,7 +50,6 @@ export const Primary:FunctionComponent<{
     class?: string;
     onClick?: (ev:MouseEvent) => Promise<any>;
 }> = function (props) {
-    const { ..._props } = props
     let { isSpinning } = props
     if (!isSpinning) isSpinning = useSignal(false)
 
@@ -71,7 +70,7 @@ export const Primary:FunctionComponent<{
     }
 
     return (html`<button
-        ...${_props}
+        ...${props}
         class=${classes}
         onClick=${click}
     >
