@@ -5,6 +5,10 @@
     --button-outline-disabled-ol: #0077ff5c;
 }
 
+@keyframes spinner {
+    to { transform: rotate(360deg); }
+}
+
 button.btn-outline {
     position: relative;
     border: none;
