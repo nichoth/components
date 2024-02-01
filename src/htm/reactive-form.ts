@@ -24,7 +24,10 @@ export const ReactiveForm:FunctionComponent<Props> = function (props:Props) {
     let { buttonText, controls } = props
     if (controls === undefined) controls = true
 
-    const classes = (['reactive-form', props.class]).join(' ').trim()
+    const classes = (['reactive-form', props.class])
+        .filter(Boolean)
+        .join(' ')
+        .trim()
 
     // need this because `onInput` event doesnt work for cmd + delete event
     function onFormKeydown (ev:KeyboardEvent) {

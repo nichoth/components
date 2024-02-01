@@ -8,6 +8,7 @@ export const Switch:FunctionComponent<{
 }> = function (props) {
     const classes = (props.class ? props.class.split(' ') : [])
         .concat(['switch'])
+        .filter(Boolean)
         .join(' ')
 
     const { name, ..._props } = props

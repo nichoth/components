@@ -10,7 +10,7 @@ export const Checkbox:FunctionComponent<{
     let { checkedState, ..._props } = props
     if (!checkedState) checkedState = useSignal<boolean>(false)
     const classes = (['checkbox', props.class])
-        .join(' ').trim()
+        .filter(Boolean).join(' ').trim()
 
     function onChange (ev) {
         const isChecked = ev.target.checked

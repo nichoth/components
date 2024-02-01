@@ -24,7 +24,7 @@ export const ButtonOutline:FunctionComponent<ButtonProps> = function (props) {
         'btn-outline',
         className,
         isSpinning.value ? 'spinning' : ''
-    ]).join(' ').trim()
+    ]).filter(Boolean).join(' ').trim()
 
     async function click (ev:MouseEvent) {
         if (!isSpinning) throw new Error('not isSpinning')  // for TS
@@ -54,7 +54,7 @@ export const Primary:FunctionComponent<ButtonProps> = function (props) {
         'primary',
         className,
         isSpinning.value ? 'spinning' : ''
-    ]).join(' ').trim()
+    ]).filter(Boolean).join(' ').trim()
 
     async function click (ev:MouseEvent) {
         if (!isSpinning) throw new Error('not isSpinning')  // for TS

@@ -10,7 +10,7 @@ interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
 const Button:FunctionComponent<Props> = function Button (props:Props) {
     const { isSpinning, ..._props } = props
     const classes = (['btn', props.class, isSpinning.value ? 'spinning' : ''])
-        .join(' ').trim()
+        .filter(Boolean).join(' ').trim()
 
     async function click (ev:MouseEvent) {
         if (props.onClick) {

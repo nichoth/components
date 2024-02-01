@@ -6,7 +6,7 @@ export const PencilBtn:FunctionComponent<{
     title?:string;
     onClick:(ev:MouseEvent)=>any;
 }> = function PencilButton (props) {
-    const classes = ['edit-pencil', props.class].join(' ').trim()
+    const classes = ['edit-pencil', props.class].filter(Boolean).join(' ').trim()
 
     return (html`<button ...${props}
         className="${classes}"
