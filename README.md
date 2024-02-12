@@ -21,7 +21,10 @@ The `preact` version is recommended, because some of the animations do not work 
 ### preact + htm
 Use preact with tagged template literals.
 
-Import from `@nichoth/components/htm/*`.
+> [!IMPORTANT]  
+> This is the preferred way to consume these, with `htm` + preact.
+
+Import components from `@nichoth/components/htm/*`.
 
 ```ts
 import { html } from 'htm/preact'
@@ -241,15 +244,25 @@ __open:__
 ![Screenshot of accordion open](image-1.png)
 
 ### Button
-```js
-import { Button } from '@nichoth/components/preact/button'
+Show resolving state with a spinner in the button. Either pass in a signal to
+use as resolving state, or just return a promise from the `click` event handler.
 
-<Button
-    isSpinning={resolving}
-    onClick={clicker}
->
-    example
-</Button>
+### Button example
+```ts
+import { FunctionComponent } from 'preact'
+import { html } from 'htm/preact'
+import { useSignal } from '@preact/signals'
+import { Button } from '@nichoth/components/preact/button'
+const isResolving = useSignal(false)
+
+const MyComponent:FunctionComponent = function () {
+    return html`<Button
+        isSpinning={resolving} ${/*<- note we are passing a signal, not boolean*/}
+        onClick={clicker}
+    >
+        example
+    </Button>`
+}
 ```
 
 ### Button Outline
