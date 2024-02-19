@@ -43,7 +43,7 @@
   "devDependencies": {
     "@nichoth/tapzero": "^0.8.4",
     "@preact/preset-vite": "^2.7.0",
-    "@typescript-eslint/parser": "^6.15.0",
+    "@typescript-eslint/parser": "^7.0.2",
     "anchor-js": "^5.0.0",
     "auto-changelog": "^2.4.0",
     "esbuild": "^0.20.0",
