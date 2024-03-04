@@ -30,7 +30,7 @@ import '../src/accordion.css'
 import '../src/switch.css'
 import '../src/checkbox.css'
 
-const Example:FunctionComponent<{}> = function () {
+const Example:FunctionComponent<object> = function () {
     const hamburgerOpen = useSignal(false)
     const isSpinning = useSignal(false)
     const count = useSignal(3)
