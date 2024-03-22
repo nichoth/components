@@ -10,8 +10,13 @@ interface InputProps extends JSX.HTMLAttributes<HTMLInputElement> {
 export const TextInput:FunctionComponent<InputProps> = function (props:InputProps) {
     const { name } = props
     const { displayName, ..._props } = props
+    const className = (props.class || '')
+        .split(' ')
+        .concat(['input-group', name])
+        .filter(Boolean)
+        .join(' ')
 
-    return (html`<div class="${'input-group ' + name}">
+    return (html`<div class="${className}">
         <input ...${_props} name=${name} type=${props.type || 'text'}
             placeholder=" "
             required=${props.required}
