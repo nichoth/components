@@ -25,6 +25,5 @@ export const TextInput:FunctionComponent<InputProps> = function (props:InputProp
             id=${name}
         />
         <label htmlFor=${name}>${displayName}</label>
-        <div class="requirements">${props.title}</div>
     </div>`)
 }
