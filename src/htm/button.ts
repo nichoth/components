@@ -1,14 +1,15 @@
 import { html } from 'htm/preact'
 import { FunctionComponent, JSX } from 'preact'
-import { Signal } from '@preact/signals'
+import { Signal, useSignal } from '@preact/signals'
 
 interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
-    isSpinning:Signal<boolean>;
+    isSpinning?:Signal<boolean>;
     onClick?:EventListener
 }
 
 const Button:FunctionComponent<Props> = function Button (props:Props) {
-    const { isSpinning, ..._props } = props
+    const { isSpinning: _isSpinning, ..._props } = props
+    const isSpinning = _isSpinning || useSignal<boolean>(false)
     const classes = (['btn', props.class, isSpinning.value ? 'spinning' : ''])
         .filter(Boolean).join(' ').trim()
 
