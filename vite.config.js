@@ -24,6 +24,7 @@ export default defineConfig({
     },
     publicDir: '../_public',
     css: {
+        devSourcemap: true,
         postcss: {
             plugins: [
                 postcssNesting

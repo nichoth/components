@@ -15,6 +15,6 @@ export const Switch:FunctionComponent<{
 
     return html`<label ...${_props} class=${classes}>
         <input type="checkbox" name=${name} />
-        My awesome feature
+        ${props.children}
     </label>`
 }
