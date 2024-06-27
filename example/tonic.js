@@ -35,7 +35,6 @@ export class TonicExample extends Tonic {
     }
 
     render () {
-        // @ts-ignore
         return this.html`<div style="margin-top: 2rem">
             <hr />
             <h2 class="tonic-example">tonic example</h2>

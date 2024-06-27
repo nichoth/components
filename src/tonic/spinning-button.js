@@ -9,7 +9,6 @@ export class SpinningButton extends Tonic {
         const { isspinning, ..._props } = this.props
 
         return (isspinning ?
-            // @ts-ignore
             this.html`<button
                 ...${_props}
                 disabled=${true}
