@@ -9,7 +9,7 @@ interface InputProps extends JSX.HTMLAttributes<HTMLInputElement> {
 
 export const TextInput:FunctionComponent<InputProps> = function (props:InputProps) {
     const { name } = props
-    const { displayName, ..._props } = props
+    const { displayName, class: _class, ..._props } = props
     const className = (props.class || '')
         .split(' ')
         .concat(['input-group', name])
