@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'preact'
 import { html } from 'htm/preact'
-// import { useSignal } from '@preact/signals'
 
 export const Switch:FunctionComponent<{
     class:string;
