@@ -13,7 +13,7 @@ interface Props {
 export const RadioGroup:FunctionComponent<Props> = function (props) {
     const { name, options, legend, required } = props
 
-    return html`<fieldset className="form-group radios" id={props.id}>
+    return html`<fieldset className="form-group radios" id=${props.id}>
         <legend>${legend}</legend>
 
         ${options.map((opt, i) => {
