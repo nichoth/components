@@ -25,7 +25,7 @@
             2. NOT in focus
             3. NOT valid */
         &:invalid:not(:focus):not(:placeholder-shown) {
-            border-bottom: 4px solid var(--text-input-error-border);
+            border-bottom: 4px solid var(--text-input-error-border, red);
 
             & ~ .requirements {
                 max-height: 200px;
