@@ -4,6 +4,7 @@ import kebabCase from 'just-kebab-case'
 
 interface Props {
     id?:string
+    class?:string
     name:string
     legend:string
     options:string[]
@@ -11,9 +12,14 @@ interface Props {
 }
 
 export const RadioGroup:FunctionComponent<Props> = function (props) {
-    const { name, options, legend, required, id } = props
+    const { class: className, name, options, legend, required, id } = props
 
-    return html`<fieldset className="form-group radios" id=${id}>
+    const classes = [className, 'form-group', 'radios']
+        .filter(Boolean)
+        .map(name => name.trim())
+        .join(' ')
+
+    return html`<fieldset class="${classes}" id=${id}>
         <legend>${legend}</legend>
 
         ${options.map((opt, i) => {
