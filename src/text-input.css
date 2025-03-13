@@ -1,23 +1,24 @@
+:root {
+    --form-color-primary: #4285f4; 
+}
+
 .input-group {
     position: relative;
     width: 100%;
     margin: 2rem 0;
 
     & input {
+        width: 100%;
         font-size: 1.2rem;
         padding: 10px 10px 10px 5px;
         display: block;
-
-        /* this is a hack to fix the input width
-        don't know why we need this */
-        width: calc(100% - 1rem);
-
         border: none;
         border-bottom: 1px solid #757575;
+        outline: none;
 
         &:focus {
-            outline: none;
-            border-bottom: 4px solid #4285f4;
+            border-bottom: 1px solid #4285f4;
+            box-shadow: 0 3px 0 0 var(--form-color-primary, #4285f4);
         }
 
         /* When input is...
