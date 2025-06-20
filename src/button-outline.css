@@ -12,7 +12,8 @@
 button.btn-outline {
     position: relative;
     border: none;
-    outline: 3px solid transparent;
+    outline: 2px solid transparent;
+    border: 2px solid;
     border-radius: 5px;
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
@@ -32,9 +33,11 @@ button.btn-outline {
     }
 
     &.primary {
-        outline-color: var(--button-primary-outline, #0077ff);
+        border: 2px solid var(--button-primary-outline, #0077ff);
+        outline-color: transparent;
 
         &:hover {
+            outline-color: var(--button-primary-outline, #0077ff);
             background-color: var(
                 --button-outine-primary-bg-hover,
                 #0077ff
