@@ -22,7 +22,7 @@ export const NumberInput:FunctionComponent<Props> = function NumberInput (props)
         .join(' ')
 
     return (html`<div class="${className}">
-        <input type="number" inputMode="numeric"
+        <input ...${props} type="number" inputMode="numeric"
             pattern="[0-9]*"
             id=${id}
             max=${max}

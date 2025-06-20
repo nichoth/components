@@ -12,7 +12,7 @@
 button.btn-outline {
     position: relative;
     border: none;
-    outline: 3px solid;
+    outline: 3px solid transparent;
     border-radius: 5px;
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
@@ -24,7 +24,7 @@ button.btn-outline {
     }
 
     &:hover {
-        outline-width: 5px;
+        outline-color: var(--button-outine-color, inital);
 
         &:disabled {
             background-color: transparent;
@@ -37,7 +37,7 @@ button.btn-outline {
         &:hover {
             background-color: var(
                 --button-outine-primary-bg-hover,
-                rgb(0 255 255 / 28%)
+                #0077ff
             );
 
             &:disabled {
