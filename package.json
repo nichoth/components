@@ -33,16 +33,16 @@
     "./htm/*": "./dist/htm/*.js"
   },
   "dependencies": {
-    "@nichoth/tonic": "^15.1.3",
+    "@substrate-system/tonic": "^16.0.16",
     "@preact/signals": "^2.0.0",
     "clipboard-copy": "^4.0.1",
     "htm": "^3.1.1",
     "just-kebab-case": "^4.2.0",
-    "preact": "^10.19.6"
+    "preact": "^10.27.0"
   },
   "devDependencies": {
-    "@bicycle-codes/tapzero": "^0.10.0",
-    "@preact/preset-vite": "^2.7.0",
+    "@substrate-system/tapzero": "^0.10.15",
+    "@preact/preset-vite": "^2.10.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "anchor-js": "^5.0.0",
@@ -56,7 +56,7 @@
     "postcss-nesting": "^13.0.0",
     "tap-arc": "^1.2.2",
     "typescript": "^5.3.3",
-    "vite": "^7.0.2"
+    "vite": "^7.0.6"
   },
   "files": [
     "./dist",
