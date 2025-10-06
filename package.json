@@ -33,7 +33,7 @@
     "./htm/*": "./dist/htm/*.js"
   },
   "dependencies": {
-    "@substrate-system/tonic": "^16.0.16",
+    "@substrate-system/tonic": "^17.0.0",
     "@preact/signals": "^2.2.1",
     "clipboard-copy": "^4.0.1",
     "htm": "^3.1.1",
