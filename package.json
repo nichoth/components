@@ -55,7 +55,7 @@
     "postcss-cli": "^11.0.0",
     "postcss-nesting": "^14.0.0",
     "tap-arc": "^1.2.2",
-    "typescript": "^5.3.3",
+    "typescript": "^6.0.3",
     "vite": "^7.0.6"
   },
   "files": [
